@@ -1,4 +1,4 @@
-// ===== OPTIMIZED MAIN.JS =====
+// ===== ENHANCED MAIN.JS =====
 class DiaverApp {
     constructor() {
         this.components = new Map();
@@ -7,7 +7,6 @@ class DiaverApp {
 
     async init() {
         try {
-            // Ждем полной загрузки DOM
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', () => this.initializeApp());
             } else {
@@ -24,10 +23,10 @@ class DiaverApp {
         this.bindEvents();
         this.initAnimations();
         this.fixHeaderOverlap();
+        this.initScrollEffect();
     }
 
     loadTemplates() {
-        // Используем только fallback templates для надежности
         this.components.set('header', this.getFallbackHeader());
         this.components.set('footer', this.getFallbackFooter());
     }
@@ -46,7 +45,6 @@ class DiaverApp {
                         <a href="${isIndexPage ? 'index.html' : '../index.html'}" class="nav-link">Главная</a>
                         <a href="${basePath}solutions.html" class="nav-link">Решения</a>
                         <a href="${basePath}products.html" class="nav-link">Продукты</a>
-                        <a href="${basePath}cases.html" class="nav-link">Кейсы</a>
                         <a href="${basePath}company.html" class="nav-link">Компания</a>
                         <a href="${basePath}contacts.html" class="nav-link">Контакты</a>
                     </div>
@@ -108,89 +106,129 @@ class DiaverApp {
     }
 
     initComponents() {
-        // Load header and footer
         const header = document.getElementById('header');
         const footer = document.getElementById('footer');
         
-        console.log('Header element:', header);
-        console.log('Footer element:', footer);
-        
         if (header) {
             header.innerHTML = this.components.get('header');
-            console.log('Header loaded successfully');
-        } else {
-            console.error('Header element not found!');
+            console.log('✅ Header loaded');
         }
         
         if (footer) {
             footer.innerHTML = this.components.get('footer');
-            console.log('Footer loaded successfully');
-        } else {
-            console.error('Footer element not found!');
+            console.log('✅ Footer loaded');
         }
 
-        // Initialize mobile menu
-        this.initMobileMenu();
-    }
-
-    initMobileMenu() {
         // Даем время на отрисовку DOM
         setTimeout(() => {
-            const toggle = document.querySelector('.nav-toggle');
-            const menu = document.querySelector('.nav-menu');
-            
-            console.log('Mobile menu elements:', { toggle, menu });
-            
-            if (toggle && menu) {
-                toggle.addEventListener('click', () => {
-                    menu.classList.toggle('active');
-                    toggle.classList.toggle('active');
-                    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
-                });
-
-                // Close menu on link click
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.addEventListener('click', () => {
-                        menu.classList.remove('active');
-                        toggle.classList.remove('active');
-                        document.body.style.overflow = '';
-                    });
-                });
-
-                // Close menu on escape key
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && menu.classList.contains('active')) {
-                        menu.classList.remove('active');
-                        toggle.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
+            this.initMobileMenu();
+            this.setActivePage();
         }, 100);
     }
 
+    setActivePage() {
+        const currentPath = window.location.pathname;
+        const currentPage = currentPath.split('/').pop() || 'index.html';
+        
+        console.log('Current page:', currentPage);
+        
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const linkHref = link.getAttribute('href');
+            const linkPage = linkHref.split('/').pop();
+            
+            console.log('Checking link:', linkHref, 'Page:', linkPage);
+            
+            // Убираем все активные классы сначала
+            link.classList.remove('active');
+            
+            // Проверяем совпадение страниц
+            const isActive = 
+                currentPage === linkPage || 
+                (currentPage === '' && linkPage === 'index.html') ||
+                (currentPage.includes('github.io') && linkPage === 'index.html' && currentPath.endsWith('/')) ||
+                (currentPage === 'diaver' && linkPage === 'index.html');
+            
+            if (isActive) {
+                link.classList.add('active');
+                console.log('✅ Active page:', linkPage);
+            }
+        });
+    }
+
+    initMobileMenu() {
+        const toggle = document.querySelector('.nav-toggle');
+        const menu = document.querySelector('.nav-menu');
+        
+        if (toggle && menu) {
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('active');
+                toggle.classList.toggle('active');
+                document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            // Close menu on link click
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('active');
+                    toggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Close menu on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && menu.classList.contains('active')) {
+                    menu.classList.remove('active');
+                    toggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close menu on click outside
+            document.addEventListener('click', (e) => {
+                if (menu.classList.contains('active') && 
+                    !menu.contains(e.target) && 
+                    !toggle.contains(e.target)) {
+                    menu.classList.remove('active');
+                    toggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+    }
+
+    initScrollEffect() {
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (header) {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+        });
+    }
+
     bindEvents() {
-        // Smooth scroll
         this.initSmoothScroll();
-        
-        // Lazy load images
         this.initLazyLoading();
-        
-        // Intersection Observer for animations
         this.initIntersectionObserver();
     }
 
     fixHeaderOverlap() {
-        // Добавляем отступ для контента под фиксированный хедер
         const main = document.querySelector('main');
-        if (main && !this.isIndexPage()) {
-            main.style.paddingTop = '80px';
-            main.style.minHeight = 'calc(100vh - 80px)';
+        if (main) {
+            if (this.isIndexPage()) {
+                main.style.paddingTop = '0';
+            } else {
+                main.style.paddingTop = '90px';
+            }
+            main.style.minHeight = 'calc(100vh - 90px)';
         }
 
-        // Для якорных ссылок
         document.querySelectorAll('section').forEach(section => {
-            section.style.scrollMarginTop = '80px';
+            section.style.scrollMarginTop = '90px';
         });
     }
 
@@ -199,9 +237,10 @@ class DiaverApp {
             const link = e.target.closest('a[href^="#"]');
             if (link) {
                 e.preventDefault();
-                const target = document.querySelector(link.getAttribute('href'));
+                const targetId = link.getAttribute('href');
+                const target = document.querySelector(targetId);
                 if (target) {
-                    const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+                    const headerHeight = document.querySelector('.header')?.offsetHeight || 90;
                     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                     
                     window.scrollTo({
@@ -236,42 +275,103 @@ class DiaverApp {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('aos-animate');
                 }
             });
-        }, { threshold: 0.1 });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        document.querySelectorAll('[data-aos]').forEach(el => {
             observer.observe(el);
         });
     }
 
     initAnimations() {
-        // Add CSS for animations
         if (!document.querySelector('#app-styles')) {
             const style = document.createElement('style');
             style.id = 'app-styles';
             style.textContent = `
-                .fade-in { opacity: 0; transform: translateY(20px); }
-                @keyframes fadeInUp {
-                    to { opacity: 1; transform: translateY(0); }
+                /* AOS Animations */
+                [data-aos] {
+                    opacity: 0;
+                    transition: all 0.6s ease;
                 }
                 
-                /* Fix for header overlap on all pages except index */
+                [data-aos="fade-up"] {
+                    transform: translateY(30px);
+                }
+                
+                [data-aos="fade-down"] {
+                    transform: translateY(-30px);
+                }
+                
+                [data-aos="fade-right"] {
+                    transform: translateX(-30px);
+                }
+                
+                [data-aos="fade-left"] {
+                    transform: translateX(30px);
+                }
+                
+                [data-aos="zoom-in"] {
+                    transform: scale(0.9);
+                }
+                
+                [data-aos="flip-left"] {
+                    transform: perspective(2500px) rotateY(-100deg);
+                }
+                
+                .aos-animate {
+                    opacity: 1;
+                    transform: none;
+                }
+
+                /* Header overlap fixes */
                 main {
-                    min-height: calc(100vh - 80px);
+                    min-height: calc(100vh - 90px);
                 }
                 
-                body:not(.index-page) main {
-                    padding-top: 80px;
+                .index-page main {
+                    padding-top: 0;
+                }
+                
+                .inner-page main {
+                    padding-top: 90px;
                 }
                 
                 section {
-                    scroll-margin-top: 80px;
+                    scroll-margin-top: 90px;
+                }
+
+                /* Mobile fixes */
+                @media (max-width: 968px) {
+                    main {
+                        min-height: calc(100vh - 80px);
+                    }
+                    
+                    .inner-page main {
+                        padding-top: 80px;
+                    }
+                    
+                    section {
+                        scroll-margin-top: 80px;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    main {
+                        min-height: calc(100vh - 70px);
+                    }
+                    
+                    .inner-page main {
+                        padding-top: 70px;
+                    }
+                    
+                    section {
+                        scroll-margin-top: 70px;
+                    }
                 }
             `;
             document.head.appendChild(style);
@@ -279,7 +379,21 @@ class DiaverApp {
     }
 }
 
-// Простая инициализация
+// Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
-    new DiaverApp();
+    window.diaverApp = new DiaverApp();
 });
+
+// Handle page transitions
+window.addEventListener('pageshow', function() {
+    if (window.diaverApp) {
+        setTimeout(() => {
+            window.diaverApp.setActivePage();
+        }, 100);
+    }
+});
+
+// Export for module usage
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = DiaverApp;
+}

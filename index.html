@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ДИАВЕР | IT-решения для бизнеса и госсектора</title>
+    <meta name="description" content="Разработка автоматизированных информационно-аналитических систем для бизнеса и государственных структур с 2005 года">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components/header.css">
     <link rel="stylesheet" href="css/components/hero.css">
@@ -13,7 +14,7 @@
     <link rel="stylesheet" href="css/components/footer.css">
     <link rel="stylesheet" href="css/pages/home.css">
 </head>
-<body>
+<body class="index-page">
     <!-- Animated Background -->
     <div class="particles-bg" id="particles-js"></div>
     
@@ -26,44 +27,215 @@
         <section class="hero-tech">
             <div class="container">
                 <div class="hero-content">
-                    <div class="hero-badge">
+                    <div class="hero-badge" data-aos="fade-down">
                         <span>IT-решения с 2005 года</span>
                     </div>
-                    <h1 class="hero-title">
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
                         <span class="gradient-text">Автоматизированные</span><br>
                         информационно-аналитические<br>
                         системы
                     </h1>
-                    <p class="hero-subtitle">
-                        Разрабатываем сложные IT-решения для бизнеса и государственных структур
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
+                        Разрабатываем сложные IT-решения для бизнеса и государственных структур. 
+                        Более 200 успешных проектов и 50 постоянных клиентов.
                     </p>
-                    <div class="hero-actions">
+                    <div class="hero-actions" data-aos="fade-up" data-aos-delay="600">
                         <a href="#solutions" class="btn btn-primary">Наши решения</a>
                         <a href="pages/contacts.html" class="btn btn-outline">Обсудить проект</a>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="800">
+                        <div class="stat">
+                            <div class="stat-number">18+</div>
+                            <div class="stat-label">лет опыта</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">проектов</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">клиентов</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Simple Test Section -->
-        <section id="solutions" style="padding: 100px 0; background: #1f2937;">
+        <!-- Trusted By Section -->
+        <section class="trusted-section">
             <div class="container">
-                <h2 style="color: white; text-align: center; font-size: 2.5rem; margin-bottom: 2rem;">Наши решения</h2>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-                    <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; text-align: center;">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
-                        <h3 style="color: white; margin-bottom: 1rem;">Бизнес-аналитика</h3>
-                        <p style="color: #9ca3af;">Системы анализа данных в реальном времени</p>
+                <div class="trusted-content" data-aos="fade-up">
+                    <p class="trusted-label">Нам доверяют</p>
+                    <div class="trusted-logos">
+                        <div class="logo-item">Росстандарт</div>
+                        <div class="logo-item">Минэкономразвития</div>
+                        <div class="logo-item">Крупные предприятия</div>
+                        <div class="logo-item">Госучреждения</div>
                     </div>
-                    <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; text-align: center;">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">🤖</div>
-                        <h3 style="color: white; margin-bottom: 1rem;">Искусственный интеллект</h3>
-                        <p style="color: #9ca3af;">AI-решения для автоматизации процессов</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Section -->
+        <section id="solutions" class="solutions-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Ключевые решения</h2>
+                    <p>Комплексные IT-решения для оптимизации бизнес-процессов</p>
+                </div>
+                
+                <div class="solutions-grid">
+                    <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="solution-icon">📊</div>
+                        <h3>Бизнес-аналитика</h3>
+                        <p>Системы анализа данных в реальном времени с интерактивными дашбордами</p>
+                        <ul class="solution-features">
+                            <li>Real-time отчетность</li>
+                            <li>OLAP аналитика</li>
+                            <li>Прогнозное моделирование</li>
+                        </ul>
+                        <a href="pages/solutions.html" class="solution-link">Подробнее →</a>
                     </div>
-                    <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; text-align: center;">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
-                        <h3 style="color: white; margin-bottom: 1rem;">Автоматизация</h3>
-                        <p style="color: #9ca3af;">Комплексная автоматизация бизнес-процессов</p>
+                    
+                    <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="solution-icon">🤖</div>
+                        <h3>Искусственный интеллект</h3>
+                        <p>AI-решения для автоматизации процессов и анализа больших данных</p>
+                        <ul class="solution-features">
+                            <li>Машинное обучение</li>
+                            <li>Компьютерное зрение</li>
+                            <li>Нейросетевые модели</li>
+                        </ul>
+                        <a href="pages/solutions.html" class="solution-link">Подробнее →</a>
+                    </div>
+                    
+                    <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="solution-icon">⚡</div>
+                        <h3>Автоматизация</h3>
+                        <p>Комплексная автоматизация бизнес-процессов и workflow систем</p>
+                        <ul class="solution-features">
+                            <li>BPMN автоматизация</li>
+                            <li>RPA роботы</li>
+                            <li>Workflow системы</li>
+                        </ul>
+                        <a href="pages/solutions.html" class="solution-link">Подробнее →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-content" data-aos="fade-right">
+                        <h2>Почему выбирают нас</h2>
+                        <p>18 лет опыта в разработке сложных IT-решений для государственных и коммерческих организаций</p>
+                        
+                        <div class="feature-list">
+                            <div class="feature-item" data-aos="fade-right" data-aos-delay="100">
+                                <div class="feature-icon">🎯</div>
+                                <div class="feature-text">
+                                    <h4>Экспертиза в госсекторе</h4>
+                                    <p>Глубокое понимание процессов и требований государственных организаций</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item" data-aos="fade-right" data-aos-delay="200">
+                                <div class="feature-icon">⚡</div>
+                                <div class="feature-text">
+                                    <h4>Быстрое внедрение</h4>
+                                    <p>Средний срок реализации проекта - 3-6 месяцев</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item" data-aos="fade-right" data-aos-delay="300">
+                                <div class="feature-icon">🛡️</div>
+                                <div class="feature-text">
+                                    <h4>Гарантия качества</h4>
+                                    <p>100% успешных внедрений и круглосуточная поддержка</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-visual" data-aos="fade-left" data-aos-delay="400">
+                        <div class="visual-card">
+                            <div class="card-header">
+                                <div class="card-icon">🚀</div>
+                                <h4>Успешные кейсы</h4>
+                            </div>
+                            <div class="card-stats">
+                                <div class="card-stat">
+                                    <div class="stat-value">45%</div>
+                                    <div class="stat-label">Рост эффективности</div>
+                                </div>
+                                <div class="card-stat">
+                                    <div class="stat-value">3.5x</div>
+                                    <div class="stat-label">Скорость обработки</div>
+                                </div>
+                            </div>
+                            <a href="pages/cases.html" class="card-link">Смотреть кейсы →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="tech-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Технологический стек</h2>
+                    <p>Используем современные технологии для создания надежных решений</p>
+                </div>
+                
+                <div class="tech-grid">
+                    <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Backend</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">Java</span>
+                            <span class="tech-item">Spring Boot</span>
+                            <span class="tech-item">PostgreSQL</span>
+                            <span class="tech-item">Node.js</span>
+                            <span class="tech-item">Python</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Frontend</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">React</span>
+                            <span class="tech-item">Angular</span>
+                            <span class="tech-item">Vue.js</span>
+                            <span class="tech-item">TypeScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category" data-aos="fade-up" data-aos-delay="300">
+                        <h3>AI & Data</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">TensorFlow</span>
+                            <span class="tech-item">PyTorch</span>
+                            <span class="tech-item">Apache Spark</span>
+                            <span class="tech-item">Kafka</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content" data-aos="fade-up">
+                    <h2>Готовы обсудить ваш проект?</h2>
+                    <p>Получите бесплатную консультацию и расчет стоимости за 1 день</p>
+                    <div class="cta-actions">
+                        <a href="pages/contacts.html" class="btn btn-primary">Обсудить проект</a>
+                        <a href="tel:+78001234567" class="btn btn-outline">8 800 123-45-67</a>
                     </div>
                 </div>
             </div>
@@ -75,6 +247,7 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
