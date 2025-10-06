@@ -1,178 +1,248 @@
-/* Products Page Styles */
-.products-section {
-    padding: 4rem 0;
+/* ===== COMPACT PRODUCTS/PROJECTS PAGE ===== */
+.projects-section {
+    padding: 2rem 0;
+    background: transparent;
 }
 
-.products-grid {
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 1.2rem;
 }
 
-.product-card {
+.project-card {
     background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 2.5rem;
-    position: relative;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(99, 102, 241, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.product-badge {
-    position: absolute;
-    top: -10px;
-    right: 20px;
-    background: var(--gradient);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.product-icon {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.product-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    color: white;
-    font-weight: 700;
-}
-
-.product-description {
-    color: var(--gray-light);
-    text-align: center;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    flex-grow: 1;
-}
-
-.product-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-    justify-content: center;
-}
-
-.product-features .feature {
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    color: var(--primary);
-    padding: 0.4rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.product-pricing {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
+    padding: 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.price {
-    font-size: 1.8rem;
-    font-weight: 800;
+.project-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.project-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.project-title {
+    flex: 1;
+}
+
+.project-title h3 {
+    font-size: 1.1rem;
     color: white;
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.4rem 0;
+    line-height: 1.3;
 }
 
-.price-note {
+.project-year {
+    background: rgba(99, 102, 241, 0.2);
+    color: var(--primary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.project-content {
+    margin-top: 0.8rem;
+}
+
+.project-description {
     color: var(--gray-light);
+    line-height: 1.4;
+    margin-bottom: 1rem;
     font-size: 0.9rem;
 }
 
-.product-actions {
+.project-details {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
+    flex-direction: column;
+    gap: 0.4rem;
 }
 
-.product-actions .btn {
+.detail-item {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.detail-label {
+    color: var(--gray-light);
+    min-width: 70px;
+    flex-shrink: 0;
+    font-weight: 500;
+}
+
+.detail-value {
+    color: white;
     flex: 1;
-    justify-content: center;
-    text-align: center;
 }
 
-/* Features Comparison */
-.features-section {
-    padding: 4rem 0;
+.status-active {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+/* Statistics Section */
+.stats-section {
+    padding: 2rem 0;
     background: rgba(255, 255, 255, 0.02);
 }
 
-.comparison-table {
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.stat-card {
     background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    overflow: hidden;
-    margin-top: 2rem;
-}
-
-.comparison-table table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.comparison-table th,
-.comparison-table td {
-    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    padding: 1.2rem;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
-.comparison-table th {
-    background: rgba(99, 102, 241, 0.1);
-    color: white;
+.stat-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.4rem;
+}
+
+.stat-label {
+    color: var(--gray-light);
+    font-size: 0.85rem;
     font-weight: 600;
-    font-size: 1.1rem;
 }
 
-.comparison-table td:first-child {
-    text-align: left;
-    font-weight: 600;
+/* CTA Section */
+.cta-section {
+    padding: 2rem 0;
+    background: transparent;
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
     color: white;
 }
 
-.comparison-table tr:hover {
-    background: rgba(255, 255, 255, 0.05);
+.cta-content p {
+    color: var(--gray-light);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
 }
 
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== COMPACT RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .products-grid {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .project-card {
+        padding: 1rem;
+    }
+    
+    .project-header {
+        gap: 0.6rem;
+    }
+    
+    .project-title h3 {
+        font-size: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-actions .btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-section {
+        padding: 1.5rem 0;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+    
+    .project-icon {
+        align-self: flex-start;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    
+    .detail-label {
+        min-width: auto;
+    }
+    
+    .stats-grid {
         grid-template-columns: 1fr;
     }
     
-    .product-card {
-        padding: 2rem;
-    }
-    
-    .comparison-table {
-        overflow-x: auto;
-    }
-    
-    .comparison-table table {
-        min-width: 600px;
-    }
-    
-    .product-actions {
-        flex-direction: column;
+    .cta-content h2 {
+        font-size: 1.3rem;
     }
 }

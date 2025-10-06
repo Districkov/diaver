@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Продукты | ДИАВЕР</title>
+    <title>Наши проекты | ДИАВЕР</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/components/header.css">
     <link rel="stylesheet" href="../css/components/cards.css">
@@ -12,158 +12,245 @@
     <link rel="stylesheet" href="../css/pages/products.css">
 </head>
 <body>
+    <!-- Particles фон -->
     <div class="particles-bg" id="particles-js"></div>
     
+    <!-- Контент поверх particles -->
     <header class="header" id="header"></header>
 
     <main>
-        <!-- Products Hero -->
+        <!-- Компактный Hero -->
         <section class="page-hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title" data-aos="fade-up">Наши продукты</h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-                        Готовые IT-решения для автоматизации бизнес-процессов
+                    <h1 class="hero-title" data-aos="fade-up">Наши проекты</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Реализованные IT-решения для государственных и коммерческих организаций
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Products Grid -->
-        <section class="products-section">
+        <!-- Projects Grid -->
+        <section class="projects-section">
             <div class="container">
-                <div class="products-grid">
-                    <div class="product-card" data-aos="flip-left">
-                        <div class="product-badge">Популярный</div>
-                        <div class="product-icon">📈</div>
-                        <h3>Diaver Analytics</h3>
-                        <p class="product-description">
-                            Платформа бизнес-аналитики с AI-прогнозированием и реальным временем обработки данных
-                        </p>
-                        <div class="product-features">
-                            <span class="feature">Real-time дашборды</span>
-                            <span class="feature">ML прогнозирование</span>
-                            <span class="feature">OLAP аналитика</span>
-                            <span class="feature">Мобильный доступ</span>
+                <div class="projects-grid">
+                    <!-- Проект 1 -->
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-header">
+                            <div class="project-icon">📊</div>
+                            <div class="project-title">
+                                <h3>Система управления проектными решениями «Контур»</h3>
+                                <span class="project-year">2017</span>
+                            </div>
                         </div>
-                        <div class="product-pricing">
-                            <div class="price">от 299 000 ₽/мес</div>
-                            <div class="price-note">Enterprise версия</div>
-                        </div>
-                        <div class="product-actions">
-                            <a href="#demo" class="btn btn-primary">Заказать демо</a>
-                            <a href="#" class="btn btn-outline">Документация</a>
-                        </div>
-                    </div>
-
-                    <div class="product-card" data-aos="flip-left" data-aos-delay="100">
-                        <div class="product-icon">🤖</div>
-                        <h3>Diaver AI Platform</h3>
-                        <p class="product-description">
-                            Комплексная платформа искусственного интеллекта для автоматизации бизнес-процессов
-                        </p>
-                        <div class="product-features">
-                            <span class="feature">Компьютерное зрение</span>
-                            <span class="feature">NLP обработка</span>
-                            <span class="feature">ML модели</span>
-                            <span class="feature">API интеграция</span>
-                        </div>
-                        <div class="product-pricing">
-                            <div class="price">от 499 000 ₽/мес</div>
-                            <div class="price-note">Индивидуальный расчет</div>
-                        </div>
-                        <div class="product-actions">
-                            <a href="#demo" class="btn btn-primary">Заказать демо</a>
-                            <a href="#" class="btn btn-outline">Кейсы</a>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Разработка и внедрение системы управления проектными решениями для организации проектной деятельности в Росстандарте
+                            </p>
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Заказчик:</span>
+                                    <span class="detail-value">Росстандарт</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Статус:</span>
+                                    <span class="detail-value status-active">Внедрена, сопровождение</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Технологии:</span>
+                                    <span class="detail-value">Java, PostgreSQL, Angular</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="product-card" data-aos="flip-left" data-aos-delay="200">
-                        <div class="product-badge">Новый</div>
-                        <div class="product-icon">⚡</div>
-                        <h3>Diaver Automate</h3>
-                        <p class="product-description">
-                            Система RPA-автоматизации для роботизации рутинных бизнес-процессов
-                        </p>
-                        <div class="product-features">
-                            <span class="feature">RPA роботы</span>
-                            <span class="feature">BPMN редактор</span>
-                            <span class="feature">Workflow引擎</span>
-                            <span class="feature">Интеграции</span>
+                    <!-- Проект 2 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="project-header">
+                            <div class="project-icon">🔫</div>
+                            <div class="project-title">
+                                <h3>Автоматизированная информационная система «Кадастр»</h3>
+                                <span class="project-year">2022</span>
+                            </div>
                         </div>
-                        <div class="product-pricing">
-                            <div class="price">от 199 000 ₽/мес</div>
-                            <div class="price-note">Базовый пакет</div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Разработка АИС для организации межведомственного электронного взаимодействия в сфере оборота гражданского и служебного оружия
+                            </p>
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Заказчик:</span>
+                                    <span class="detail-value">Росстандарт</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Статус:</span>
+                                    <span class="detail-value status-active">Внедрена, сопровождение</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Технологии:</span>
+                                    <span class="detail-value">СМЭВ, веб-сервисы, QR-коды</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="product-actions">
-                            <a href="#demo" class="btn btn-primary">Заказать демо</a>
-                            <a href="#" class="btn btn-outline">Видео обзор</a>
+                    </div>
+
+                    <!-- Проект 3 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-header">
+                            <div class="project-icon">💰</div>
+                            <div class="project-title">
+                                <h3>Информационно-аналитическая система «Управленческий учет»</h3>
+                                <span class="project-year">2020</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Разработка и внедрение ИАС для управления бюджетом предприятия, мониторинга исполнения бюджета и формирования отчетности
+                            </p>
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Заказчик:</span>
+                                    <span class="detail-value">Крупное промышленное предприятие</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Статус:</span>
+                                    <span class="detail-value status-active">Внедрена, сопровождение</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Технологии:</span>
+                                    <span class="detail-value">BI-аналитика, штрих-кодирование</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Проект 4 -->
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-header">
+                            <div class="project-icon">🏛️</div>
+                            <div class="project-title">
+                                <h3>Система управления инвестиционной деятельностью</h3>
+                                <span class="project-year">2015</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Разработка системы для оптимизации инвестиционной деятельности федеральных органов власти
+                            </p>
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Заказчик:</span>
+                                    <span class="detail-value">Федеральный орган власти</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Статус:</span>
+                                    <span class="detail-value status-active">Внедрена, сопровождение</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Технологии:</span>
+                                    <span class="detail-value">ВИП-панели, прогнозная аналитика</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Проект 5 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="project-header">
+                            <div class="project-icon">📑</div>
+                            <div class="project-title">
+                                <h3>Система автоматизации конкурсных процедур</h3>
+                                <span class="project-year">2016</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Автоматизация процессов подготовки и контроля планов-графиков размещения заказов
+                            </p>
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Заказчик:</span>
+                                    <span class="detail-value">Государственное учреждение</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Статус:</span>
+                                    <span class="detail-value status-active">Внедрена, сопровождение</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Технологии:</span>
+                                    <span class="detail-value">Workflow, BPMN</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Проект 6 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-header">
+                            <div class="project-icon">📚</div>
+                            <div class="project-title">
+                                <h3>Система электронного архива документов</h3>
+                                <span class="project-year">2013-2023</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Разработка и внедрение систем управления электронными архивами документов (7 успешных внедрений)
+                            </p>
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Заказчики:</span>
+                                    <span class="detail-value">Государственные и коммерческие организации</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Статус:</span>
+                                    <span class="detail-value status-active">7 внедрений, сопровождение</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Технологии:</span>
+                                    <span class="detail-value">ECM, сканирование, индексация</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Comparison -->
-        <section class="features-section">
+        <!-- Statistics -->
+        <section class="stats-section">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Сравнение возможностей</h2>
-                <div class="comparison-table" data-aos="fade-up">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Функциональность</th>
-                                <th>Analytics</th>
-                                <th>AI Platform</th>
-                                <th>Automate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Real-time аналитика</td>
-                                <td>✅</td>
-                                <td>✅</td>
-                                <td>✅</td>
-                            </tr>
-                            <tr>
-                                <td>ML прогнозирование</td>
-                                <td>✅</td>
-                                <td>✅</td>
-                                <td>❌</td>
-                            </tr>
-                            <tr>
-                                <td>Компьютерное зрение</td>
-                                <td>❌</td>
-                                <td>✅</td>
-                                <td>❌</td>
-                            </tr>
-                            <tr>
-                                <td>RPA автоматизация</td>
-                                <td>❌</td>
-                                <td>✅</td>
-                                <td>✅</td>
-                            </tr>
-                            <tr>
-                                <td>BPMN моделирование</td>
-                                <td>❌</td>
-                                <td>✅</td>
-                                <td>✅</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="stats-grid" data-aos="fade-up">
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Реализованных проектов</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Лет на рынке</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Постоянных клиентов</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Успешных внедрений</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
+        <!-- CTA -->
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content" data-aos="fade-up">
-                    <h2>Нужна индивидуальная консультация?</h2>
-                    <p>Наши эксперты помогут подобрать оптимальное решение для вашего бизнеса</p>
+                    <h2>Заинтересовали наши проекты?</h2>
+                    <p>Обсудим реализацию подобного решения для вашей организации</p>
                     <div class="cta-actions">
-                        <a href="contacts.html" class="btn btn-primary">Получить консультацию</a>
-                        <a href="tel:+78001234567" class="btn btn-outline">8 800 123-45-67</a>
+                        <a href="contacts.html" class="btn btn-primary">Обсудить проект</a>
+                        <a href="cases.html" class="btn btn-outline">Смотреть кейсы</a>
                     </div>
                 </div>
             </div>

@@ -1,28 +1,31 @@
-/* Header Styles */
+/* ===== COMPACT HEADER ===== */
 .header {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 1000;
+    width: 100%;
     background: rgba(17, 24, 39, 0.95);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 .navbar {
+    padding: 0.8rem 0; /* Уменьшено */
+}
+
+.navbar .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
 }
 
 .nav-brand .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Уменьшено */
     font-weight: 800;
     color: white;
     text-decoration: none;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: var(--gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -30,11 +33,9 @@
 
 .nav-menu {
     display: flex;
-    gap: 2rem;
     align-items: center;
+    gap: 1.5rem; /* Уменьшено */
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-link {
@@ -43,8 +44,13 @@
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
-    padding: 0.5rem 0;
-    font-size: 1rem;
+    padding: 0.4rem 0; /* Уменьшено */
+    font-size: 0.9rem; /* Уменьшено */
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white;
 }
 
 .nav-link::after {
@@ -54,13 +60,8 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: var(--gradient);
     transition: width 0.3s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: white;
 }
 
 .nav-link:hover::after,
@@ -71,7 +72,7 @@
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem; /* Уменьшено */
 }
 
 .nav-phone {
@@ -79,11 +80,11 @@
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Уменьшено */
 }
 
 .nav-phone:hover {
-    color: #6366f1;
+    color: var(--primary);
 }
 
 .nav-toggle {
@@ -92,34 +93,32 @@
     background: none;
     border: none;
     cursor: pointer;
-    gap: 4px;
-    padding: 0.5rem;
+    padding: 0.2rem; /* Уменьшено */
+    gap: 0.2rem; /* Уменьшено */
 }
 
 .nav-toggle span {
-    width: 25px;
-    height: 3px;
+    width: 22px; /* Уменьшено */
+    height: 2px;
     background: white;
-    transition: 0.3s;
-    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
-/* Mobile Navigation */
+/* ===== COMPACT MOBILE MENU ===== */
 @media (max-width: 968px) {
     .nav-menu {
         position: fixed;
         top: 100%;
         left: 0;
-        right: 0;
-        background: rgba(17, 24, 39, 0.98);
+        width: 100%;
+        background: var(--darker);
         flex-direction: column;
-        padding: 2rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.5rem; /* Уменьшено */
+        gap: 0.8rem; /* Уменьшено */
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        backdrop-filter: blur(20px);
     }
 
     .nav-menu.active {
@@ -131,18 +130,18 @@
     .nav-toggle {
         display: flex;
     }
-
-    .nav-phone {
-        display: none;
-    }
 }
 
 @media (max-width: 480px) {
     .navbar {
-        padding: 0.8rem 0;
+        padding: 0.6rem 0; /* Уменьшено */
     }
-
+    
+    .nav-phone {
+        font-size: 0.8rem; /* Уменьшено */
+    }
+    
     .nav-brand .logo {
-        font-size: 1.5rem;
+        font-size: 1.3rem; /* Уменьшено */
     }
 }
