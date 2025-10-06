@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/components/header.css">
     <link rel="stylesheet" href="../css/components/cards.css">
     <link rel="stylesheet" href="../css/components/animations.css">
+    <link rel="stylesheet" href="../css/components/features.css">
     <link rel="stylesheet" href="../css/components/footer.css">
     <link rel="stylesheet" href="../css/pages/company.css">
 </head>
@@ -17,140 +18,341 @@
     <header class="header" id="header"></header>
 
     <main>
-        <!-- Company Hero -->
-        <section class="page-hero">
+        <!-- Enhanced Hero -->
+        <section class="page-hero-company">
             <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title" data-aos="fade-up">О компании</h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-                        ДИАВЕР - ведущий разработчик IT-решений для бизнеса и государственного сектора
+                <div class="hero-content-company">
+                    <div class="hero-badge-company" data-aos="fade-down">
+                        <span>🏢 О компании</span>
+                    </div>
+                    <h1 class="hero-title-company" data-aos="fade-up" data-aos-delay="200">
+                        ДИАВЕР —<br>
+                        <span class="gradient-text">надежный IT-партнер</span>
+                    </h1>
+                    <p class="hero-subtitle-company" data-aos="fade-up" data-aos-delay="400">
+                        18 лет создаем сложные IT-решения для бизнеса и государственного сектора. 
+                        Более 200 успешных проектов и 50 постоянных клиентов доверяют нам свои цифровые трансформации.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section class="about-section">
+        <!-- Company Story -->
+        <section class="company-story">
             <div class="container">
-                <div class="about-content">
-                    <div class="about-text" data-aos="fade-right">
-                        <h2>Наша миссия</h2>
-                        <p>
-                            Мы создаем инновационные IT-решения, которые помогают бизнесу и государственным организациям 
-                            эффективно использовать данные для принятия стратегических решений и автоматизации процессов.
+                <div class="story-grid">
+                    <div class="story-content" data-aos="fade-right">
+                        <h2>Наша история</h2>
+                        <p class="story-intro">
+                            Основанная в 2005 году, компания ДИАВЕР прошла путь от небольшой команды разработчиков 
+                            до ведущего поставщика IT-решений для государственного сектора и крупного бизнеса.
                         </p>
-                        <p>
-                            С 2005 года мы реализовали более 200 успешных проектов, став надежным технологическим партнером 
-                            для ведущих компаний и государственных структур.
-                        </p>
-                        <div class="mission-stats">
-                            <div class="mission-stat">
-                                <div class="stat-number" data-counter="18" data-counter-options='{"separator": ""}'>0</div>
-                                <div class="stat-label">лет на рынке</div>
+                        
+                        <div class="story-timeline">
+                            <div class="timeline-item" data-aos="fade-up">
+                                <div class="timeline-year">2005</div>
+                                <div class="timeline-content">
+                                    <h4>Основание компании</h4>
+                                    <p>Начало работы в области разработки автоматизированных систем</p>
+                                </div>
                             </div>
-                            <div class="mission-stat">
-                                <div class="stat-number" data-counter="50">0</div>
-                                <div class="stat-label">постоянных клиентов</div>
+                            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                                <div class="timeline-year">2010</div>
+                                <div class="timeline-content">
+                                    <h4>Первые проекты для госсектора</h4>
+                                    <p>Начало сотрудничества с федеральными органами власти</p>
+                                </div>
                             </div>
-                            <div class="mission-stat">
-                                <div class="stat-number" data-counter="200">0</div>
-                                <div class="stat-label">реализованных проектов</div>
+                            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="timeline-year">2015</div>
+                                <div class="timeline-content">
+                                    <h4>Запуск AI-направления</h4>
+                                    <p>Внедрение технологий искусственного интеллекта в решения</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                                <div class="timeline-year">2024</div>
+                                <div class="timeline-content">
+                                    <h4>Лидер в области IT-решений</h4>
+                                    <p>Более 200 успешных проектов и признание на рынке</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="about-visual" data-aos="fade-left">
-                        <div class="visual-card">
-                            <div class="card-year">2005</div>
-                            <div class="card-text">Основание компании</div>
+                    
+                    <div class="story-stats" data-aos="fade-left">
+                        <div class="stats-card">
+                            <div class="stat-main">
+                                <div class="stat-number" data-counter="18">0</div>
+                                <div class="stat-label">лет опыта</div>
+                            </div>
+                            <p>Успешной работы на IT-рынке</p>
                         </div>
-                        <div class="visual-card">
-                            <div class="card-year">2010</div>
-                            <div class="card-text">Первые проекты для госсектора</div>
+                        
+                        <div class="stats-card">
+                            <div class="stat-main">
+                                <div class="stat-number" data-counter="200">0</div>
+                                <div class="stat-label">проектов</div>
+                            </div>
+                            <p>Реализовано для клиентов</p>
                         </div>
-                        <div class="visual-card">
-                            <div class="card-year">2015</div>
-                            <div class="card-text">Запуск AI-направления</div>
+                        
+                        <div class="stats-card">
+                            <div class="stat-main">
+                                <div class="stat-number" data-counter="50">0</div>
+                                <div class="stat-label">клиентов</div>
+                            </div>
+                            <p>Доверяют нам постоянно</p>
                         </div>
-                        <div class="visual-card">
-                            <div class="card-year">2024</div>
-                            <div class="card-text">Лидер в области IT-решений</div>
+                        
+                        <div class="stats-card">
+                            <div class="stat-main">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">успех</div>
+                            </div>
+                            <p>Все проекты завершены успешно</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Values Section -->
-        <section class="values-section">
+        <!-- Mission & Values -->
+        <section class="mission-section">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Наши ценности</h2>
-                <div class="values-grid">
-                    <div class="value-card" data-aos="flip-left">
-                        <div class="value-icon">🎯</div>
-                        <h3>Инновации</h3>
-                        <p>Мы постоянно исследуем и внедряем передовые технологии для создания продуктов будущего</p>
+                <div class="mission-grid">
+                    <div class="mission-content" data-aos="fade-right">
+                        <h2>Наша миссия</h2>
+                        <p class="mission-statement">
+                            Мы создаем инновационные IT-решения, которые помогают бизнесу и государственным 
+                            организациям эффективно использовать данные для принятия стратегических решений 
+                            и автоматизации ключевых процессов.
+                        </p>
+                        <div class="mission-features">
+                            <div class="mission-feature">
+                                <div class="feature-icon">🎯</div>
+                                <div class="feature-content">
+                                    <h4>Фокус на результате</h4>
+                                    <p>Каждое решение приносит измеримую бизнес-ценность</p>
+                                </div>
+                            </div>
+                            <div class="mission-feature">
+                                <div class="feature-icon">🤝</div>
+                                <div class="feature-content">
+                                    <h4>Долгосрочное партнерство</h4>
+                                    <p>Строим отношения, основанные на доверии и взаимном успехе</p>
+                                </div>
+                            </div>
+                            <div class="mission-feature">
+                                <div class="feature-icon">⚡</div>
+                                <div class="feature-content">
+                                    <h4>Технологическое лидерство</h4>
+                                    <p>Используем передовые технологии для создания продуктов будущего</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="value-card" data-aos="flip-left" data-aos-delay="100">
-                        <div class="value-icon">🤝</div>
-                        <h3>Партнерство</h3>
-                        <p>Строим долгосрочные отношения с клиентами, основанные на доверии и взаимном успехе</p>
-                    </div>
-                    <div class="value-card" data-aos="flip-left" data-aos-delay="200">
-                        <div class="value-icon">⚡</div>
-                        <h3>Эффективность</h3>
-                        <p>Обеспечиваем максимальную отдачу от инвестиций в IT через оптимизацию процессов</p>
-                    </div>
-                    <div class="value-card" data-aos="flip-left" data-aos-delay="300">
-                        <div class="value-icon">🛡️</div>
-                        <h3>Надежность</h3>
-                        <p>Гарантируем стабильную работу систем и соблюдение сроков реализации проектов</p>
+                    
+                    <div class="mission-visual" data-aos="fade-left">
+                        <div class="values-showcase">
+                            <h3>Наши ценности</h3>
+                            <div class="values-list">
+                                <div class="value-item">
+                                    <div class="value-icon">💎</div>
+                                    <div class="value-content">
+                                        <h5>Качество</h5>
+                                        <p>Непрерывное совершенствование и внимание к деталям</p>
+                                    </div>
+                                </div>
+                                <div class="value-item">
+                                    <div class="value-icon">🚀</div>
+                                    <div class="value-content">
+                                        <h5>Инновации</h5>
+                                        <p>Постоянный поиск новых решений и технологий</p>
+                                    </div>
+                                </div>
+                                <div class="value-item">
+                                    <div class="value-icon">🤝</div>
+                                    <div class="value-content">
+                                        <h5>Партнерство</h5>
+                                        <p>Открытость и долгосрочные отношения с клиентами</p>
+                                    </div>
+                                </div>
+                                <div class="value-item">
+                                    <div class="value-icon">🎯</div>
+                                    <div class="value-content">
+                                        <h5>Результат</h5>
+                                        <p>Ориентация на достижение бизнес-целей клиента</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Team Section -->
-        <section id="team" class="team-section">
+        <section id="team" class="team-showcase">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Наша команда</h2>
-                <div class="team-grid">
-                    <div class="team-member" data-aos="zoom-in">
-                        <div class="member-photo">
-                            <div class="photo-placeholder">👨‍💼</div>
+                <div class="section-header-enhanced" data-aos="fade-up">
+                    <h2>Команда экспертов</h2>
+                    <p>Профессионалы с глубокой экспертизой в разработке сложных IT-систем</p>
+                </div>
+                
+                <div class="team-grid-enhanced">
+                    <div class="team-member-enhanced" data-aos="zoom-in">
+                        <div class="member-visual">
+                            <div class="member-photo-enhanced">
+                                <div class="photo-placeholder">👨‍💼</div>
+                                <div class="member-glow"></div>
+                            </div>
+                            <div class="member-social">
+                                <a href="#" class="social-link">in</a>
+                                <a href="#" class="social-link">✉️</a>
+                            </div>
                         </div>
-                        <h3>Алексей Иванов</h3>
-                        <p class="member-role">CEO, Основатель</p>
-                        <p class="member-bio">20+ лет в IT, эксперт в области enterprise-решений и цифровой трансформации</p>
+                        <div class="member-info">
+                            <h3>Алексей Иванов</h3>
+                            <p class="member-role">CEO, Основатель</p>
+                            <p class="member-experience">20+ лет в IT</p>
+                            <p class="member-bio">
+                                Эксперт в области enterprise-решений и цифровой трансформации. 
+                                Руководил более 100 проектами для государственных и коммерческих организаций.
+                            </p>
+                            <div class="member-expertise">
+                                <span class="expertise-tag">Стратегия</span>
+                                <span class="expertise-tag">Управление</span>
+                                <span class="expertise-tag">Architecture</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team-member" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="member-photo">
-                            <div class="photo-placeholder">👩‍💻</div>
+                    
+                    <div class="team-member-enhanced" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="member-visual">
+                            <div class="member-photo-enhanced">
+                                <div class="photo-placeholder">👩‍💻</div>
+                                <div class="member-glow"></div>
+                            </div>
+                            <div class="member-social">
+                                <a href="#" class="social-link">in</a>
+                                <a href="#" class="social-link">✉️</a>
+                            </div>
                         </div>
-                        <h3>Мария Петрова</h3>
-                        <p class="member-role">CTO</p>
-                        <p class="member-bio">Эксперт в области AI и машинного обучения, PhD в компьютерных науках</p>
+                        <div class="member-info">
+                            <h3>Мария Петрова</h3>
+                            <p class="member-role">CTO</p>
+                            <p class="member-experience">15+ лет в разработке</p>
+                            <p class="member-bio">
+                                Эксперт в области AI и машинного обучения, PhD в компьютерных науках. 
+                                Специализируется на создании масштабируемых архитектур.
+                            </p>
+                            <div class="member-expertise">
+                                <span class="expertise-tag">AI/ML</span>
+                                <span class="expertise-tag">Архитектура</span>
+                                <span class="expertise-tag">R&D</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team-member" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="member-photo">
-                            <div class="photo-placeholder">👨‍🔬</div>
+                    
+                    <div class="team-member-enhanced" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="member-visual">
+                            <div class="member-photo-enhanced">
+                                <div class="photo-placeholder">👨‍🔬</div>
+                                <div class="member-glow"></div>
+                            </div>
+                            <div class="member-social">
+                                <a href="#" class="social-link">in</a>
+                                <a href="#" class="social-link">✉️</a>
+                            </div>
                         </div>
-                        <h3>Дмитрий Сидоров</h3>
-                        <p class="member-role">Lead Data Scientist</p>
-                        <p class="member-bio">Специалист по большим данным и предиктивной аналитике</p>
+                        <div class="member-info">
+                            <h3>Дмитрий Сидоров</h3>
+                            <p class="member-role">Lead Data Scientist</p>
+                            <p class="member-experience">12+ лет в Data Science</p>
+                            <p class="member-bio">
+                                Специалист по большим данным и предиктивной аналитике. 
+                                Разработал более 50 ML-моделей для различных отраслей.
+                            </p>
+                            <div class="member-expertise">
+                                <span class="expertise-tag">Data Science</span>
+                                <span class="expertise-tag">ML</span>
+                                <span class="expertise-tag">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-stats" data-aos="fade-up">
+                    <div class="team-stat">
+                        <div class="stat-number">40+</div>
+                        <div class="stat-label">специалистов</div>
+                    </div>
+                    <div class="team-stat">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">средний стаж</div>
+                    </div>
+                    <div class="team-stat">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">технологий</div>
+                    </div>
+                    <div class="team-stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">поддержка</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates & Awards -->
+        <section class="certificates-section">
+            <div class="container">
+                <div class="section-header-enhanced" data-aos="fade-up">
+                    <h2>Сертификаты и достижения</h2>
+                    <p>Подтверждение нашего профессионализма и качества работы</p>
+                </div>
+                
+                <div class="certificates-grid">
+                    <div class="certificate-card" data-aos="fade-up">
+                        <div class="certificate-icon">🏆</div>
+                        <h4>Сертификат ISO 9001</h4>
+                        <p>Система менеджмента качества соответствует международным стандартам</p>
+                    </div>
+                    
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="certificate-icon">🔒</div>
+                        <h4>Соответствие 152-ФЗ</h4>
+                        <p>Все решения соответствуют требованиям защиты персональных данных</p>
+                    </div>
+                    
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="certificate-icon">⭐</div>
+                        <h4>Лучший поставщик 2023</h4>
+                        <p>Признание от Росстандарта как надежного технологического партнера</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section">
+        <section class="cta-company">
             <div class="container">
-                <div class="cta-content" data-aos="fade-up">
-                    <h2>Присоединяйтесь к нашей команде</h2>
-                    <p>Мы всегда в поиске талантливых специалистов</p>
-                    <div class="cta-actions">
-                        <a href="#career" class="btn btn-primary">Посмотреть вакансии</a>
-                        <a href="contacts.html" class="btn btn-outline">Отправить резюме</a>
+                <div class="cta-content-company" data-aos="fade-up">
+                    <h2>Станьте частью нашей истории</h2>
+                    <p>Давайте создадим что-то выдающееся вместе</p>
+                    <div class="cta-actions-company">
+                        <a href="contacts.html" class="btn btn-primary btn-large">
+                            <span>Начать сотрудничество</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                <path d="M8 12H16M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                        <a href="#career" class="btn btn-outline btn-large">
+                            <span>Карьера в ДИАВЕР</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
