@@ -889,3 +889,15 @@
         padding: 1.5rem;
     }
 }
+/* Enhancements for PDF buttons */
+.btn-view-pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Ensure PDF modal z-index works */
+.solution-detailed-card {
+    position: relative;
+    z-index: 1;
+}
