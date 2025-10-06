@@ -7,17 +7,26 @@ class DiaverApp {
 
     async init() {
         try {
-            await this.loadTemplates();
-            this.initComponents();
-            this.bindEvents();
-            this.initAnimations();
-            this.fixHeaderOverlap();
+            // Ждем полной загрузки DOM
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => this.initializeApp());
+            } else {
+                this.initializeApp();
+            }
         } catch (error) {
             console.error('App initialization failed:', error);
         }
     }
 
-    async loadTemplates() {
+    initializeApp() {
+        this.loadTemplates();
+        this.initComponents();
+        this.bindEvents();
+        this.initAnimations();
+        this.fixHeaderOverlap();
+    }
+
+    loadTemplates() {
         // Используем только fallback templates для надежности
         this.components.set('header', this.getFallbackHeader());
         this.components.set('footer', this.getFallbackFooter());
@@ -92,10 +101,10 @@ class DiaverApp {
     }
 
     isIndexPage() {
-        return window.location.pathname.endsWith('index.html') || 
-               window.location.pathname.endsWith('/') ||
-               window.location.pathname.includes('github.io') && 
-               !window.location.pathname.includes('/pages/');
+        const path = window.location.pathname;
+        return path.endsWith('index.html') || 
+               path.endsWith('/') ||
+               (path.includes('github.io') && !path.includes('/pages/'));
     }
 
     initComponents() {
@@ -103,42 +112,61 @@ class DiaverApp {
         const header = document.getElementById('header');
         const footer = document.getElementById('footer');
         
-        if (header) header.innerHTML = this.components.get('header');
-        if (footer) footer.innerHTML = this.components.get('footer');
+        console.log('Header element:', header);
+        console.log('Footer element:', footer);
+        
+        if (header) {
+            header.innerHTML = this.components.get('header');
+            console.log('Header loaded successfully');
+        } else {
+            console.error('Header element not found!');
+        }
+        
+        if (footer) {
+            footer.innerHTML = this.components.get('footer');
+            console.log('Footer loaded successfully');
+        } else {
+            console.error('Footer element not found!');
+        }
 
         // Initialize mobile menu
         this.initMobileMenu();
     }
 
     initMobileMenu() {
-        const toggle = document.querySelector('.nav-toggle');
-        const menu = document.querySelector('.nav-menu');
-        
-        if (toggle && menu) {
-            toggle.addEventListener('click', () => {
-                menu.classList.toggle('active');
-                toggle.classList.toggle('active');
-                document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
-            });
-
-            // Close menu on link click
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.remove('active');
-                    toggle.classList.remove('active');
-                    document.body.style.overflow = '';
+        // Даем время на отрисовку DOM
+        setTimeout(() => {
+            const toggle = document.querySelector('.nav-toggle');
+            const menu = document.querySelector('.nav-menu');
+            
+            console.log('Mobile menu elements:', { toggle, menu });
+            
+            if (toggle && menu) {
+                toggle.addEventListener('click', () => {
+                    menu.classList.toggle('active');
+                    toggle.classList.toggle('active');
+                    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
                 });
-            });
 
-            // Close menu on escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && menu.classList.contains('active')) {
-                    menu.classList.remove('active');
-                    toggle.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        }
+                // Close menu on link click
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.remove('active');
+                        toggle.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+
+                // Close menu on escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && menu.classList.contains('active')) {
+                        menu.classList.remove('active');
+                        toggle.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        }, 100);
     }
 
     bindEvents() {
@@ -234,25 +262,16 @@ class DiaverApp {
                 }
                 
                 /* Fix for header overlap on all pages except index */
-                body:not(.index-page) main {
-                    padding-top: 80px;
+                main {
                     min-height: calc(100vh - 80px);
                 }
                 
-                body:not(.index-page) section {
-                    scroll-margin-top: 80px;
+                body:not(.index-page) main {
+                    padding-top: 80px;
                 }
                 
-                /* Mobile fixes */
-                @media (max-width: 768px) {
-                    body:not(.index-page) main {
-                        padding-top: 70px;
-                        min-height: calc(100vh - 70px);
-                    }
-                    
-                    body:not(.index-page) section {
-                        scroll-margin-top: 70px;
-                    }
+                section {
+                    scroll-margin-top: 80px;
                 }
             `;
             document.head.appendChild(style);
@@ -260,14 +279,7 @@ class DiaverApp {
     }
 }
 
-// Initialize app when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => new DiaverApp());
-} else {
+// Простая инициализация
+document.addEventListener('DOMContentLoaded', function() {
     new DiaverApp();
-}
-
-// Export for potential module usage
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = DiaverApp;
-}
+});
