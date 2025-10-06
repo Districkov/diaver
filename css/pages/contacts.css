@@ -35,7 +35,7 @@
 
 .contact-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgba(249, 115, 22, 0.3);
 }
 
 .contact-card:hover::before {
@@ -103,7 +103,7 @@
 }
 
 .map-placeholder {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: var(--gradient);
     border-radius: 16px;
     padding: 3rem 2rem;
     text-align: center;
@@ -190,7 +190,7 @@
 }
 
 .faq-item:hover {
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgba(249, 115, 22, 0.3);
 }
 
 .faq-question {

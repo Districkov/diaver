@@ -1,6 +1,6 @@
 /* ===== COMPACT SOLUTIONS PAGE ===== */
 .solutions-intro {
-    padding: 2rem 0; /* Уменьшено */
+    padding: 2rem 0;
     background: rgba(255, 255, 255, 0.02);
 }
 
@@ -11,90 +11,94 @@
 }
 
 .intro-text {
-    font-size: 1.1rem; /* Уменьшено */
+    font-size: 1.1rem;
     line-height: 1.6;
     color: var(--gray-light);
 }
 
 .ready-solutions {
-    padding: 3rem 0; /* Уменьшено */
+    padding: 3rem 0;
 }
 
 .solutions-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 1.5rem; /* Уменьшено */
-    margin-bottom: 3rem; /* Уменьшено */
+    gap: 1.5rem;
+    margin-bottom: 3rem;
 }
-
 
 .solution-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px; /* Уменьшено */
+    border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
     position: relative;
 }
 
 .solution-card:hover {
-    transform: translateY(-3px); /* Уменьшено */
-    border-color: rgba(99, 102, 241, 0.3);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Уменьшено */
+    transform: translateY(-3px);
+    border-color: rgba(249, 115, 22, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .solution-header {
-    padding: 1.2rem 1.2rem 0.8rem; /* Уменьшено */
+    padding: 1.2rem 1.2rem 0.8rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: flex-start;
-    gap: 0.8rem; /* Уменьшено */
+    gap: 0.8rem;
 }
 
 .solution-icon {
-    font-size: 1.5rem; /* Уменьшено */
+    font-size: 1.5rem;
     flex-shrink: 0;
 }
 
 .solution-header h3 {
-    font-size: 1.1rem; /* Уменьшено */
+    font-size: 1.1rem;
     color: white;
-    margin-bottom: 0.4rem; /* Уменьшено */
+    margin-bottom: 0.4rem;
     flex: 1;
 }
 
 .solution-status {
-    font-size: 0.7rem; /* Уменьшено */
-    padding: 0.2rem 0.6rem; /* Уменьшено */
-    border-radius: 10px; /* Уменьшено */
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
     font-weight: 600;
     white-space: nowrap;
 }
 
+.status-implemented {
+    background: rgba(249, 115, 22, 0.2);
+    color: var(--primary);
+}
+
 .solution-content {
-    padding: 1.2rem; /* Уменьшено */
+    padding: 1.2rem;
 }
 
 .solution-description {
     color: var(--gray-light);
-    margin-bottom: 1.2rem; /* Уменьшено */
+    margin-bottom: 1.2rem;
     line-height: 1.5;
     font-style: italic;
-    font-size: 0.9rem; /* Уменьшено */
+    font-size: 0.9rem;
 }
 
 .solution-features {
     list-style: none;
-    margin-bottom: 1.2rem; /* Уменьшено */
+    margin-bottom: 1.2rem;
 }
 
 .solution-features li {
-    padding: 0.4rem 0; /* Уменьшено */
+    padding: 0.4rem 0;
     color: var(--gray-light);
     position: relative;
-    padding-left: 1.2rem; /* Уменьшено */
+    padding-left: 1.2rem;
     line-height: 1.4;
-    font-size: 0.9rem; /* Уменьшено */
+    font-size: 0.9rem;
 }
 
 .solution-features li::before {
@@ -107,40 +111,40 @@
 
 .solution-actions {
     display: flex;
-    gap: 0.8rem; /* Уменьшено */
+    gap: 0.8rem;
 }
 
 .btn-small {
-    padding: 0.4rem 0.8rem; /* Уменьшено */
-    font-size: 0.8rem; /* Уменьшено */
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
 }
 
 /* Compact Solutions Grid */
 .all-solutions-compact {
     background: rgba(255, 255, 255, 0.02);
-    border-radius: 12px; /* Уменьшено */
-    padding: 1.5rem; /* Уменьшено */
-    margin-top: 2rem; /* Уменьшено */
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
 }
 
 .compact-title {
     text-align: center;
-    margin-bottom: 1.5rem; /* Уменьшено */
+    margin-bottom: 1.5rem;
     color: white;
-    font-size: 1.3rem; /* Уменьшено */
+    font-size: 1.3rem;
 }
 
 .compact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 0.8rem; /* Уменьшено */
+    gap: 0.8rem;
 }
 
 .compact-solution {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px; /* Уменьшено */
-    padding: 0.8rem 1.2rem; /* Уменьшено */
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -148,34 +152,34 @@
 }
 
 .compact-solution:hover {
-    border-color: rgba(99, 102, 241, 0.3);
-    transform: translateX(3px); /* Уменьшено */
+    border-color: rgba(249, 115, 22, 0.3);
+    transform: translateX(3px);
 }
 
 .compact-solution h4 {
     color: white;
-    font-size: 0.9rem; /* Уменьшено */
+    font-size: 0.9rem;
     margin: 0;
     flex: 1;
 }
 
 .compact-solution .status {
-    font-size: 0.7rem; /* Уменьшено */
+    font-size: 0.7rem;
     color: var(--primary);
     font-weight: 600;
-    margin-left: 0.8rem; /* Уменьшено */
+    margin-left: 0.8rem;
 }
 
 /* ===== COMPACT RESPONSIVE ===== */
 @media (max-width: 768px) {
     .solutions-grid {
         grid-template-columns: 1fr;
-        gap: 1rem; /* Уменьшено */
+        gap: 1rem;
     }
     
     .solution-header {
         flex-direction: column;
-        gap: 0.4rem; /* Уменьшено */
+        gap: 0.4rem;
     }
     
     .solution-status {
@@ -184,14 +188,14 @@
     
     .compact-grid {
         grid-template-columns: 1fr;
-        gap: 0.6rem; /* Уменьшено */
+        gap: 0.6rem;
     }
     
     .compact-solution {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.4rem; /* Уменьшено */
-        padding: 0.8rem; /* Уменьшено */
+        gap: 0.4rem;
+        padding: 0.8rem;
     }
     
     .compact-solution .status {
@@ -201,26 +205,26 @@
 
 @media (max-width: 480px) {
     .solutions-intro {
-        padding: 1.5rem 0; /* Уменьшено */
+        padding: 1.5rem 0;
     }
     
     .intro-text {
-        font-size: 1rem; /* Уменьшено */
+        font-size: 1rem;
     }
     
     .ready-solutions {
-        padding: 2rem 0; /* Уменьшено */
+        padding: 2rem 0;
     }
     
     .solution-content {
-        padding: 1rem; /* Уменьшено */
+        padding: 1rem;
     }
     
     .all-solutions-compact {
-        padding: 1rem; /* Уменьшено */
+        padding: 1rem;
     }
     
     .compact-solution {
-        padding: 0.6rem; /* Уменьшено */
+        padding: 0.6rem;
     }
 }

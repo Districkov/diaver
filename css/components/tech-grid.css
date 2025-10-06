@@ -1,3 +1,4 @@
+/* Tech Grid Styles */
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -10,20 +11,20 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .tech-category:hover {
     transform: translateY(-5px);
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgba(249, 115, 22, 0.3);
 }
 
 .tech-category h3 {
-    color: var(--primary);
-    margin-bottom: 1.5rem;
+    color: white;
     font-size: 1.3rem;
+    margin-bottom: 1.5rem;
     font-weight: 700;
+    text-align: center;
 }
 
 .tech-items {
@@ -34,20 +35,38 @@
 }
 
 .tech-item {
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.3);
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
     color: var(--primary);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 600;
     transition: all 0.3s ease;
-    cursor: default;
 }
 
 .tech-item:hover {
     background: var(--primary);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+@media (max-width: 768px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .tech-category {
+        padding: 1.5rem;
+    }
+    
+    .tech-items {
+        gap: 0.6rem;
+    }
+    
+    .tech-item {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
 }

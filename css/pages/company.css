@@ -13,7 +13,7 @@
 .about-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #fff, #a5b4fc);
+    background: linear-gradient(135deg, #fff, #fdba74);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -44,6 +44,7 @@
 
 .mission-stat:hover {
     transform: translateY(-5px);
+    border-color: rgba(249, 115, 22, 0.3);
 }
 
 .mission-stat .stat-number {
@@ -91,7 +92,7 @@
 
 .visual-card:hover {
     transform: translateX(10px);
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgba(249, 115, 22, 0.3);
 }
 
 .visual-card:hover::before {
@@ -148,7 +149,7 @@
 
 .value-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgba(249, 115, 22, 0.3);
 }
 
 .value-card:hover::before {
@@ -197,7 +198,7 @@
 
 .team-member:hover {
     transform: translateY(-5px);
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgba(249, 115, 22, 0.3);
 }
 
 .member-photo {
@@ -205,7 +206,7 @@
     height: 120px;
     border-radius: 50%;
     margin: 0 auto 1.5rem;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: var(--gradient);
     display: flex;
     align-items: center;
     justify-content: center;

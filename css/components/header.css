@@ -25,19 +25,21 @@
 }
 
 .nav-brand .logo {
-    font-size: 2rem; /* Увеличили лого */
-    font-weight: 800;
-    color: white;
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     transition: all 0.3s ease;
 }
 
-.nav-brand .logo:hover {
+.logo-image {
+    height: 150px; /* Настрой под размер твоего логотипа */
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.nav-brand .logo:hover .logo-image {
     transform: scale(1.05);
+    filter: brightness(1.2);
 }
 
 .nav-menu {
@@ -190,6 +192,10 @@
         height: 80px;
     }
     
+    .logo-image {
+        height: 40px; /* Уменьши лого для мобильных */
+    }
+    
     .nav-menu {
         position: fixed;
         top: 100%;
@@ -250,8 +256,8 @@
         height: 70px;
     }
     
-    .nav-brand .logo {
-        font-size: 1.6rem;
+    .logo-image {
+        height: 35px; /* Еще меньше для маленьких экранов */
     }
     
     .nav-phone {

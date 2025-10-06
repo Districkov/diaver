@@ -39,7 +39,11 @@ class DiaverApp {
             <nav class="navbar">
                 <div class="container">
                     <div class="nav-brand">
-                        <a href="${isIndexPage ? 'index.html' : '../index.html'}" class="logo">ДИАВЕР</a>
+                        <a href="${isIndexPage ? 'index.html' : '../index.html'}" class="logo">
+                            <img src="${isIndexPage ? 'assets/images/logo.png' : '../assets/images/logo.png'}" 
+                                 alt="ДИАВЕР" 
+                                 class="logo-image">
+                        </a>
                     </div>
                     <div class="nav-menu">
                         <a href="${isIndexPage ? 'index.html' : '../index.html'}" class="nav-link">Главная</a>
@@ -66,7 +70,7 @@ class DiaverApp {
         const basePath = isIndexPage ? 'pages/' : '';
 
         return `
-            <div class="container">
+             <div class="container">
                 <div class="footer-content">
                     <div class="footer-section">
                         <div class="footer-logo">ДИАВЕР</div>

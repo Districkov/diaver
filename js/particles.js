@@ -3,14 +3,14 @@ function initParticles() {
     particlesJS('particles-js', {
         particles: {
             number: {
-                value: 60, // Оптимальное количество
+                value: 60,
                 density: {
                     enable: true,
                     value_area: 800
                 }
             },
             color: {
-                value: "#6366f1"
+                value: "#f97316"  // Оранжевые частицы
             },
             shape: {
                 type: "circle",
@@ -20,7 +20,7 @@ function initParticles() {
                 }
             },
             opacity: {
-                value: 0.3, // Прозрачнее чтобы не мешал контенту
+                value: 0.3,
                 random: true,
                 anim: {
                     enable: true,
@@ -30,7 +30,7 @@ function initParticles() {
                 }
             },
             size: {
-                value: 2, // Меньше размер
+                value: 2,
                 random: true,
                 anim: {
                     enable: true,
@@ -41,14 +41,14 @@ function initParticles() {
             },
             line_linked: {
                 enable: true,
-                distance: 120, // Ближе связи
-                color: "#6366f1",
-                opacity: 0.5, // Еще прозрачнее
+                distance: 120,
+                color: "#f97316",  // Оранжевые связи
+                opacity: 0.5,
                 width: 1
             },
             move: {
                 enable: true,
-                speed: 1.5, // Медленнее
+                speed: 1.5,
                 direction: "none",
                 random: true,
                 straight: false,
@@ -71,7 +71,7 @@ function initParticles() {
             },
             modes: {
                 repulse: {
-                    distance: 80, // Меньшая дистанция
+                    distance: 80,
                     duration: 0.4
                 },
                 push: {

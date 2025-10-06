@@ -86,7 +86,7 @@
 .cta-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #fff, #a5b4fc);
+    background: linear-gradient(135deg, #fff, #fdba74);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -103,6 +103,30 @@
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+/* Footer Logo Image */
+.footer-logo-image {
+    height: 100px;
+    width: auto;
+    margin-bottom: 1rem;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Убери старый текстовый логотип */
+.footer-logo:not(:has(.footer-logo-image)) {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {

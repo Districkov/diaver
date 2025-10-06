@@ -22,7 +22,7 @@
 
 .project-card:hover {
     transform: translateY(-2px);
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgba(249, 115, 22, 0.3);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -51,7 +51,7 @@
 }
 
 .project-year {
-    background: rgba(99, 102, 241, 0.2);
+    background: rgba(249, 115, 22, 0.2);
     color: var(--primary);
     padding: 0.2rem 0.6rem;
     border-radius: 12px;
@@ -124,7 +124,7 @@
 
 .stat-card:hover {
     transform: translateY(-2px);
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgba(249, 115, 22, 0.3);
 }
 
 .stat-number {

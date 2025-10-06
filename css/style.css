@@ -1,9 +1,9 @@
 /* ===== COMPACT GLOBAL STYLES ===== */
 :root {
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --secondary: #10b981;
-    --accent: #f59e0b;
+    --primary: #f97316;
+    --primary-dark: #ea580c;
+    --secondary: #fb923c;
+    --accent: #fdba74;
     --danger: #ef4444;
     --dark: #1f2937;
     --darker: #111827;
@@ -11,9 +11,9 @@
     --light: #f8fafc;
     --gray: #6b7280;
     --gray-light: #9ca3af;
-    --gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
-    --gradient-secondary: linear-gradient(135deg, #10b981, #059669);
-    --gradient-accent: linear-gradient(135deg, #f59e0b, #d97706);
+    --gradient: linear-gradient(135deg, #f97316, #fb923c);
+    --gradient-secondary: linear-gradient(135deg, #ea580c, #f97316);
+    --gradient-accent: linear-gradient(135deg, #fb923c, #fdba74);
 }
 
 * {
@@ -24,12 +24,12 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 15px; /* Уменьшено */
+    font-size: 15px;
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.5; /* Уменьшено */
+    line-height: 1.5;
     color: var(--light);
     background: var(--darker);
     overflow-x: hidden;
@@ -39,7 +39,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px; /* Уменьшено */
+    padding: 0 15px;
 }
 
 /* ===== COMPACT TYPOGRAPHY ===== */
@@ -51,10 +51,10 @@ body {
 }
 
 .section-title {
-    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Уменьшено */
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     text-align: center;
-    margin-bottom: 1.5rem; /* Уменьшено */
-    background: linear-gradient(135deg, #fff, #a5b4fc);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff, #fdba74);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -64,10 +64,10 @@ body {
 .section-subtitle {
     text-align: center;
     color: var(--gray);
-    font-size: 1rem; /* Уменьшено */
-    margin-bottom: 1.5rem; /* Уменьшено */
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
-    letter-spacing: 1px; /* Уменьшено */
+    letter-spacing: 1px;
     font-weight: 600;
 }
 
@@ -75,15 +75,15 @@ body {
 .btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px; /* Уменьшено */
-    padding: 10px 24px; /* Уменьшено */
+    gap: 6px;
+    padding: 10px 24px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
     border: 2px solid transparent;
     cursor: pointer;
-    font-size: 0.9rem; /* Уменьшено */
+    font-size: 0.9rem;
     position: relative;
     overflow: hidden;
 }
@@ -109,8 +109,8 @@ body {
 }
 
 .btn-primary:hover {
-    transform: translateY(-1px); /* Уменьшено */
-    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3); /* Уменьшено */
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
 }
 
 .btn-outline {
@@ -122,7 +122,7 @@ body {
 .btn-outline:hover {
     background: var(--primary);
     color: white;
-    transform: translateY(-1px); /* Уменьшено */
+    transform: translateY(-1px);
 }
 
 /* ===== COMPACT UTILITY CLASSES ===== */
@@ -130,19 +130,19 @@ body {
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
-.mb-1 { margin-bottom: 0.8rem; } /* Уменьшено */
-.mb-2 { margin-bottom: 1.5rem; } /* Уменьшено */
-.mb-3 { margin-bottom: 2rem; } /* Уменьшено */
-.mt-1 { margin-top: 0.8rem; } /* Уменьшено */
-.mt-2 { margin-top: 1.5rem; } /* Уменьшено */
-.mt-3 { margin-top: 2rem; } /* Уменьшено */
+.mb-1 { margin-bottom: 0.8rem; }
+.mb-2 { margin-bottom: 1.5rem; }
+.mb-3 { margin-bottom: 2rem; }
+.mt-1 { margin-top: 0.8rem; }
+.mt-2 { margin-top: 1.5rem; }
+.mt-3 { margin-top: 2rem; }
 
 /* ===== COMPACT LOADING ===== */
 .loading {
     display: inline-block;
-    width: 16px; /* Уменьшено */
-    height: 16px; /* Уменьшено */
-    border: 2px solid rgba(255,255,255,.3); /* Уменьшено */
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,.3);
     border-radius: 50%;
     border-top-color: #fff;
     animation: spin 1s ease-in-out infinite;
@@ -152,35 +152,6 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* ===== COMPACT RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 12px; /* Уменьшено */
-    }
-    
-    .btn {
-        padding: 8px 20px; /* Уменьшено */
-        font-size: 0.85rem; /* Уменьшено */
-    }
-    
-    .section-title {
-        font-size: 1.8rem; /* Уменьшено */
-    }
-}
-
-@media (max-width: 480px) {
-    html {
-        font-size: 14px; /* Уменьшено */
-    }
-    
-    .container {
-        padding: 0 10px; /* Уменьшено */
-    }
-    
-    .btn {
-        padding: 7px 18px; /* Уменьшено */
-    }
-}
 /* ===== PARTICLES BACKGROUND ===== */
 .particles-bg {
     position: fixed;
@@ -188,17 +159,16 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Под всем контентом */
-    background: var(--darker); /* Основной фон */
+    z-index: -1;
+    background: var(--darker);
 }
 
 /* ===== CONTENT POSITIONING ===== */
 body {
     position: relative;
-    z-index: 1; /* Контент поверх particles */
+    z-index: 1;
 }
 
-/* Убедиться что все секции имеют прозрачный фон */
 .hero-tech,
 .page-hero,
 .solutions-intro,
@@ -214,18 +184,16 @@ body {
 .faq-section,
 .cases-section,
 .testimonials-section {
-    background: transparent; /* Прозрачный фон чтобы был виден particles */
+    background: transparent;
 }
 
-/* Только для секций которые нуждаются в затемнении */
 .solutions-intro,
 .stats-section,
 .faq-section,
 .testimonials-section {
-    background: rgba(255, 255, 255, 0.02); /* Легкое затемнение */
+    background: rgba(255, 255, 255, 0.02);
 }
 
-/* Для карточек оставить белый фон */
 .solution-card,
 .project-card,
 .product-card,
@@ -234,9 +202,10 @@ body {
 .value-card,
 .team-member,
 .testimonial-card {
-    background: rgba(255, 255, 255, 0.05); /* Карточки поверх particles */
-    
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
 }
+
 /* Быстрое исправление для всех внутренних страниц */
 body:not(:has(.hero-tech)) main {
     padding-top: 10px;
@@ -244,4 +213,34 @@ body:not(:has(.hero-tech)) main {
 
 body:not(:has(.hero-tech)) .page-hero {
     padding-top: 100px;
+}
+
+/* ===== COMPACT RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .btn {
+        padding: 7px 18px;
+    }
 }
