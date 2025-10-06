@@ -1,0 +1,149 @@
+/* ===== PDF PRESENTATION MODAL ===== */
+.pdf-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pdf-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.pdf-modal-content {
+    background: var(--darker);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.pdf-modal.active .pdf-modal-content {
+    transform: scale(1);
+}
+
+.pdf-modal-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pdf-modal-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.pdf-modal-close {
+    background: none;
+    border: none;
+    color: var(--gray-light);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.pdf-modal-close:hover {
+    color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.pdf-modal-body {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#pdfViewer {
+    flex: 1;
+    border: none;
+    border-radius: 0 0 20px 20px;
+}
+
+.pdf-actions {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Presentation cards enhancements */
+.presentation-btn {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.presentation-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Loading state */
+.pdf-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: var(--gray-light);
+}
+
+.pdf-loading .spinner {
+    margin-right: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pdf-modal-content {
+        width: 95%;
+        height: 95vh;
+    }
+    
+    .pdf-modal-header {
+        padding: 1rem 1.5rem;
+    }
+    
+    .pdf-modal-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .pdf-actions {
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+    }
+    
+    #pdfViewer {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-modal-content {
+        border-radius: 12px;
+    }
+    
+    .pdf-modal-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    #pdfViewer {
+        height: 300px;
+    }
+}
