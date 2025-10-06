@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейсы | ДИАВЕР</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components/header.css">
+    <link rel="stylesheet" href="../css/components/cards.css">
+    <link rel="stylesheet" href="../css/components/animations.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+    <link rel="stylesheet" href="../css/pages/cases.css">
+</head>
+<body>
+    <div class="particles-bg" id="particles-js"></div>
+    
+    <header class="header" id="header"></header>
+
+    <main>
+        <!-- Cases Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-aos="fade-up">Наши кейсы</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                        Реализованные проекты и успешные внедрения для бизнеса и госсектора
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cases Filter -->
+        <section class="cases-filter">
+            <div class="container">
+                <div class="filter-buttons" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all">Все проекты</button>
+                    <button class="filter-btn" data-filter="government">Госсектор</button>
+                    <button class="filter-btn" data-filter="business">Бизнес</button>
+                    <button class="filter-btn" data-filter="analytics">Аналитика</button>
+                    <button class="filter-btn" data-filter="ai">AI решения</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cases Grid -->
+        <section class="cases-section">
+            <div class="container">
+                <div class="cases-grid">
+                    <!-- Case 1 -->
+                    <div class="case-card" data-category="government analytics" data-aos="fade-up">
+                        <div class="case-image">
+                            <div class="case-badge">Госсектор</div>
+                            <img src="../assets/images/case-government.jpg" alt="Федеральная аналитическая система" onerror="this.style.display='none'">
+                        </div>
+                        <div class="case-content">
+                            <h3>Федеральная аналитическая система</h3>
+                            <p class="case-description">
+                                Разработка системы мониторинга и анализа социально-экономических показателей для федерального органа власти
+                            </p>
+                            <div class="case-stats">
+                                <div class="stat">
+                                    <span class="stat-value">+45%</span>
+                                    <span class="stat-label">Эффективность анализа</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">12 мес</span>
+                                    <span class="stat-label">Срок реализации</span>
+                                </div>
+                            </div>
+                            <div class="case-features">
+                                <span class="feature">Real-time дашборды</span>
+                                <span class="feature">Прогнозное моделирование</span>
+                                <span class="feature">OLAP аналитика</span>
+                            </div>
+                            <a href="#" class="case-link">Подробнее о проекте →</a>
+                        </div>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div class="case-card" data-category="business ai" data-aos="fade-up" data-aos-delay="100">
+                        <div class="case-image">
+                            <div class="case-badge">Бизнес</div>
+                            <img src="../assets/images/case-retail.jpg" alt="AI для ритейла" onerror="this.style.display='none'">
+                        </div>
+                        <div class="case-content">
+                            <h3>AI-платформа для ритейл-сети</h3>
+                            <p class="case-description">
+                                Внедрение системы искусственного интеллекта для прогнозирования спроса и оптимизации запасов в сети из 200+ магазинов
+                            </p>
+                            <div class="case-stats">
+                                <div class="stat">
+                                    <span class="stat-value">-30%</span>
+                                    <span class="stat-label">Сокращение излишков</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">+18%</span>
+                                    <span class="stat-label">Точность прогнозов</span>
+                                </div>
+                            </div>
+                            <div class="case-features">
+                                <span class="feature">Машинное обучение</span>
+                                <span class="feature">Прогнозирование спроса</span>
+                                <span class="feature">API интеграции</span>
+                            </div>
+                            <a href="#" class="case-link">Подробнее о проекте →</a>
+                        </div>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div class="case-card" data-category="government automation" data-aos="fade-up" data-aos-delay="200">
+                        <div class="case-image">
+                            <div class="case-badge">Госсектор</div>
+                            <img src="../assets/images/case-automation.jpg" alt="Автоматизация госуслуг" onerror="this.style.display='none'">
+                        </div>
+                        <div class="case-content">
+                            <h3>Автоматизация госуслуг региона</h3>
+                            <p class="case-description">
+                                Создание единой платформы для автоматизации предоставления государственных услуг с интеграцией 15 ведомств
+                            </p>
+                            <div class="case-stats">
+                                <div class="stat">
+                                    <span class="stat-value">3.5x</span>
+                                    <span class="stat-label">Скорость обработки</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">85%</span>
+                                    <span class="stat-label">Автоматизация</span>
+                                </div>
+                            </div>
+                            <div class="case-features">
+                                <span class="feature">BPMN автоматизация</span>
+                                <span class="feature">RPA роботы</span>
+                                <span class="feature">Workflow системы</span>
+                            </div>
+                            <a href="#" class="case-link">Подробнее о проекте →</a>
+                        </div>
+                    </div>
+
+                    <!-- Add more cases as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Отзывы клиентов</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card" data-aos="fade-right">
+                        <div class="testimonial-content">
+                            <p>"Команда ДИАВЕР проявила высочайший профессионализм в реализации сложного проекта федерального уровня. Решение работает стабильно и превысило наши ожидания."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <strong>Иван Петров</strong>
+                                <span>Директор департамента, Минэкономразвития</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card" data-aos="fade-right" data-aos-delay="100">
+                        <div class="testimonial-content">
+                            <p>"Внедрение AI-платформы позволило нам значительно улучшить прогнозирование спроса и оптимизировать логистику. ROI проекта составил 240% за первый год."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <strong>Мария Сидорова</strong>
+                                <span>CTO, RetailChain Corp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content" data-aos="fade-up">
+                    <h2>Хотите такой же результат?</h2>
+                    <p>Обсудим ваш проект и предложим оптимальное решение</p>
+                    <div class="cta-actions">
+                        <a href="contacts.html" class="btn btn-primary">Обсудить проект</a>
+                        <a href="tel:+78001234567" class="btn btn-outline">8 800 123-45-67</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../js/particles.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/cases-filter.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

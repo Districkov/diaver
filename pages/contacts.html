@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | ДИАВЕР</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components/header.css">
+    <link rel="stylesheet" href="../css/components/cards.css">
+    <link rel="stylesheet" href="../css/components/animations.css">
+    <link rel="stylesheet" href="../css/components/forms.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+    <link rel="stylesheet" href="../css/pages/contacts.css">
+</head>
+<body>
+    <div class="particles-bg" id="particles-js"></div>
+    
+    <header class="header" id="header"></header>
+
+    <main>
+        <!-- Contacts Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-aos="fade-up">Контакты</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                        Свяжитесь с нами для обсуждения вашего проекта или получения консультации
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info -->
+        <section class="contact-info-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card" data-aos="fade-right">
+                        <div class="contact-icon">📍</div>
+                        <h3>Адрес</h3>
+                        <p>123456, Москва<br>ул. Примерная, д. 123<br>Бизнес-центр "ТехноПарк"</p>
+                    </div>
+                    
+                    <div class="contact-card" data-aos="fade-right" data-aos-delay="100">
+                        <div class="contact-icon">📞</div>
+                        <h3>Телефоны</h3>
+                        <p>
+                            <a href="tel:+78001234567">8 800 123-45-67</a><br>
+                            <small>Бесплатно по России</small>
+                        </p>
+                        <p>
+                            <a href="tel:+74951234567">+7 (495) 123-45-67</a><br>
+                            <small>Москва</small>
+                        </p>
+                    </div>
+                    
+                    <div class="contact-card" data-aos="fade-right" data-aos-delay="200">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p>
+                            <a href="mailto:info@diaver.ru">info@diaver.ru</a><br>
+                            <small>Общие вопросы</small>
+                        </p>
+                        <p>
+                            <a href="mailto:sales@diaver.ru">sales@diaver.ru</a><br>
+                            <small>Коммерческие предложения</small>
+                        </p>
+                    </div>
+                    
+                    <div class="contact-card" data-aos="fade-right" data-aos-delay="300">
+                        <div class="contact-icon">🕒</div>
+                        <h3>Время работы</h3>
+                        <p>
+                            Пн-Пт: 9:00-18:00<br>
+                            Сб-Вс: выходной
+                        </p>
+                        <p class="time-note">
+                            Техническая поддержка: 24/7
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form & Map -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-layout">
+                    <!-- Contact Form -->
+                    <div class="form-container" data-aos="fade-right">
+                        <h2>Напишите нам</h2>
+                        <p class="form-subtitle">Заполните форму и мы свяжемся с вами в течение 1 часа</p>
+                        
+                        <form class="contact-form" data-validate>
+                            <div class="form-group">
+                                <label for="name">Имя *</label>
+                                <input type="text" id="name" name="name" required placeholder="Ваше имя">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Компания</label>
+                                <input type="text" id="company" name="company" placeholder="Название компании">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Телефон</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">Интересующая услуга</label>
+                                <select id="service" name="service">
+                                    <option value="">Выберите услугу</option>
+                                    <option value="analytics">Бизнес-аналитика</option>
+                                    <option value="ai">Искусственный интеллект</option>
+                                    <option value="automation">Автоматизация</option>
+                                    <option value="security">Кибербезопасность</option>
+                                    <option value="consulting">Консалтинг</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Сообщение *</label>
+                                <textarea id="message" name="message" required placeholder="Опишите ваш проект или задайте вопрос..." rows="5"></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <label for="privacy">
+                                    Я соглашаюсь с <a href="#" target="_blank">политикой конфиденциальности</a> *
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full">
+                                Отправить сообщение
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Map & Additional Info -->
+                    <div class="map-container" data-aos="fade-left">
+                        <div class="map-placeholder">
+                            <div class="map-content">
+                                <div class="map-icon">🗺️</div>
+                                <h3>Наш офис в Москве</h3>
+                                <p>Бизнес-центр "ТехноПарк"</p>
+                                <p>Станция метро: "Технопарк"</p>
+                                <div class="map-features">
+                                    <div class="feature">🚇 5 минут от метро</div>
+                                    <div class="feature">🅿️ Бесплатная парковка</div>
+                                    <div class="feature">♿ Доступная среда</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="additional-info">
+                            <h3>Реквизиты компании</h3>
+                            <div class="requisites">
+                                <p><strong>ООО "ДИАВЕР"</strong></p>
+                                <p>ИНН: 1234567890</p>
+                                <p>КПП: 123401001</p>
+                                <p>ОГРН: 1234567890123</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Частые вопросы</h2>
+                <div class="faq-grid">
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>Как начать сотрудничество?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Для начала сотрудничества оставьте заявку через форму на сайте или позвоните нам. Мы проведем бесплатную консультацию, обсудим ваши задачи и предложим оптимальное решение.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="faq-question">
+                            <h3>Какие сроки реализации проекта?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Сроки зависят от сложности проекта. Простые внедрения занимают 2-4 недели, комплексные решения - от 3 до 12 месяцев. Точные сроки определяются после технического аудита.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="faq-question">
+                            <h3>Предоставляете ли вы техническую поддержку?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Да, мы предоставляем круглосуточную техническую поддержку для всех наших клиентов. Также доступны услуги по доработке и масштабированию реализованных решений.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../js/particles.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/form-validator.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
