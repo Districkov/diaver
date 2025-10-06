@@ -11,41 +11,20 @@ class DiaverApp {
             this.initComponents();
             this.bindEvents();
             this.initAnimations();
+            this.fixHeaderOverlap();
         } catch (error) {
             console.error('App initialization failed:', error);
         }
     }
 
     async loadTemplates() {
-        const templates = [
-            { id: 'header', url: 'components/header.html' },
-            { id: 'footer', url: 'components/footer.html' }
-        ];
-
-        for (const template of templates) {
-            try {
-                const response = await fetch(template.url);
-                if (response.ok) {
-                    const html = await response.text();
-                    this.components.set(template.id, html);
-                }
-            } catch (error) {
-                console.warn(`Failed to load ${template.id}:`, error);
-                this.components.set(template.id, this.getFallbackTemplate(template.id));
-            }
-        }
-    }
-
-    getFallbackTemplate(type) {
-        const templates = {
-            header: this.getFallbackHeader(),
-            footer: this.getFallbackFooter()
-        };
-        return templates[type] || '';
+        // Используем только fallback templates для надежности
+        this.components.set('header', this.getFallbackHeader());
+        this.components.set('footer', this.getFallbackFooter());
     }
 
     getFallbackHeader() {
-        const isIndexPage = !window.location.pathname.includes('pages/');
+        const isIndexPage = this.isIndexPage();
         const basePath = isIndexPage ? 'pages/' : '';
         
         return `
@@ -56,10 +35,11 @@ class DiaverApp {
                     </div>
                     <div class="nav-menu">
                         <a href="${isIndexPage ? 'index.html' : '../index.html'}" class="nav-link">Главная</a>
-                        <a href="${isIndexPage ? 'pages/solutions.html' : 'solutions.html'}" class="nav-link">Решения</a>
-                        <a href="${isIndexPage ? 'pages/products.html' : 'products.html'}" class="nav-link">Продукты</a>
-                        <a href="${isIndexPage ? 'pages/company.html' : 'company.html'}" class="nav-link">Компания</a>
-                        <a href="${isIndexPage ? 'pages/contacts.html' : 'contacts.html'}" class="nav-link">Контакты</a>
+                        <a href="${basePath}solutions.html" class="nav-link">Решения</a>
+                        <a href="${basePath}products.html" class="nav-link">Продукты</a>
+                        <a href="${basePath}cases.html" class="nav-link">Кейсы</a>
+                        <a href="${basePath}company.html" class="nav-link">Компания</a>
+                        <a href="${basePath}contacts.html" class="nav-link">Контакты</a>
                     </div>
                     <div class="nav-actions">
                         <a href="tel:+78001234567" class="nav-phone">8 800 123-45-67</a>
@@ -75,7 +55,7 @@ class DiaverApp {
     }
 
     getFallbackFooter() {
-        const isIndexPage = !window.location.pathname.includes('pages/');
+        const isIndexPage = this.isIndexPage();
         const basePath = isIndexPage ? 'pages/' : '';
 
         return `
@@ -109,6 +89,13 @@ class DiaverApp {
                 </div>
             </div>
         `;
+    }
+
+    isIndexPage() {
+        return window.location.pathname.endsWith('index.html') || 
+               window.location.pathname.endsWith('/') ||
+               window.location.pathname.includes('github.io') && 
+               !window.location.pathname.includes('/pages/');
     }
 
     initComponents() {
@@ -163,6 +150,20 @@ class DiaverApp {
         
         // Intersection Observer for animations
         this.initIntersectionObserver();
+    }
+
+    fixHeaderOverlap() {
+        // Добавляем отступ для контента под фиксированный хедер
+        const main = document.querySelector('main');
+        if (main && !this.isIndexPage()) {
+            main.style.paddingTop = '80px';
+            main.style.minHeight = 'calc(100vh - 80px)';
+        }
+
+        // Для якорных ссылок
+        document.querySelectorAll('section').forEach(section => {
+            section.style.scrollMarginTop = '80px';
+        });
     }
 
     initSmoothScroll() {
@@ -230,6 +231,28 @@ class DiaverApp {
                 .fade-in { opacity: 0; transform: translateY(20px); }
                 @keyframes fadeInUp {
                     to { opacity: 1; transform: translateY(0); }
+                }
+                
+                /* Fix for header overlap on all pages except index */
+                body:not(.index-page) main {
+                    padding-top: 80px;
+                    min-height: calc(100vh - 80px);
+                }
+                
+                body:not(.index-page) section {
+                    scroll-margin-top: 80px;
+                }
+                
+                /* Mobile fixes */
+                @media (max-width: 768px) {
+                    body:not(.index-page) main {
+                        padding-top: 70px;
+                        min-height: calc(100vh - 70px);
+                    }
+                    
+                    body:not(.index-page) section {
+                        scroll-margin-top: 70px;
+                    }
                 }
             `;
             document.head.appendChild(style);
