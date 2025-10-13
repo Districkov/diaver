@@ -1,129 +1,181 @@
-/* Form Styles */
-.form-container {
-    background: rgba(255, 255, 255, 0.05);
+/* ==========================================================================
+   Contact Form Styling (Dark Theme)
+   Стили, переработанные в соответствии с предоставленным изображением.
+   ========================================================================== */
+
+/* --- Контейнер формы --- */
+.form-container-enhanced {
+    background: #1c1c1f; /* Глубокий тёмно-серый фон */
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 2.5rem;
-    backdrop-filter: blur(10px);
+    border-radius: 16px; /* Более скругленные углы */
+    padding: 2.5rem 3rem;
+    backdrop-filter: blur(12px);
 }
 
-.form-container h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: white;
+/* --- Заголовок формы --- */
+.form-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.form-title {
+    color: #ffffff;
+    font-size: 2.5rem;
     font-weight: 700;
+    margin-bottom: 0.75rem;
 }
 
 .form-subtitle {
-    color: var(--gray-light);
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
+    color: #a1a1aa; /* Светло-серый для подзаголовка */
+    font-size: 1rem;
 }
 
-.contact-form {
+/* --- Тело формы и расположение элементов --- */
+.contact-form-body {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem; /* Пространство между группами полей */
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
+    gap: 0.6rem; /* Пространство между меткой и полем */
 }
 
+/* --- Стили для меток (label) --- */
 .form-group label {
-    color: white;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    font-size: 0.95rem;
+    color: #a1a1aa;
+    font-weight: 500;
+    font-size: 0.875rem; /* 14px */
 }
 
+/* --- Общие стили для полей ввода, textarea и select --- */
 .form-group input,
-.form-group select,
-.form-group textarea {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.form-group textarea,
+.select-wrapper select {
+    width: 100%;
+    padding: 12px 16px;
+    background: #1c1c1f; /* ИЗМЕНЕНО: Фон сделан одинаковым с формой */
+    border: 1px solid #3f3f46; /* Едва заметная граница */
     border-radius: 8px;
-    padding: 0.8rem 1rem;
-    color: white;
+    color: #f4f4f5; /* Светлый цвет текста */
     font-size: 1rem;
-    transition: all 0.3s ease;
-    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
-}
-
+/* --- Стили для плейсхолдера --- */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: var(--gray-light);
+    color: #71717a;
 }
 
-.form-group input.error,
-.form-group select.error,
-.form-group textarea.error {
-    border-color: var(--danger);
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+/* --- Состояние фокуса --- */
+.form-group input:focus,
+.form-group textarea:focus,
+.select-wrapper select:focus {
+    outline: none;
+    border-color: var(--orange-primary); /* Оранжевый акцент при фокусе */
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
 }
 
-.checkbox-group {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 0.8rem;
+/* --- Кастомный Select (Выпадающий список) --- */
+.select-wrapper {
+    position: relative;
 }
 
-.checkbox-group input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    margin-top: 0.2rem;
-    accent-color: var(--primary);
+.select-wrapper::after {
+    content: '▼';
+    font-size: 0.8rem;
+    color: #a1a1aa;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Чтобы клик проходил на сам select */
 }
 
-.checkbox-group label {
-    margin-bottom: 0;
-    font-weight: normal;
+.select-wrapper select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 40px; /* Место для стрелки */
+}
+
+/* --- Кастомный чекбокс --- */
+.form-group-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     font-size: 0.9rem;
-    line-height: 1.4;
+    color: #a1a1aa;
 }
 
-.checkbox-group a {
-    color: var(--primary);
+.form-group-checkbox input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3f3f46;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.form-group-checkbox input[type="checkbox"]:hover {
+    border-color: var(--orange-primary);
+}
+
+.form-group-checkbox input[type="checkbox"]:checked {
+    background-color: var(--orange-primary);
+    border-color: var(--orange-primary);
+}
+
+.form-group-checkbox input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.form-group-checkbox a {
+    color: var(--orange-primary);
     text-decoration: none;
+    font-weight: 500;
 }
 
-.checkbox-group a:hover {
+.form-group-checkbox a:hover {
     text-decoration: underline;
 }
 
-.btn-full {
-    width: 100%;
-    justify-content: center;
+
+/* --- Адаптивность --- */
+@media (max-width: 968px) {
+    .contact-layout-enhanced {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* Form Success State */
-.form-success {
-    text-align: center;
-    padding: 2rem;
-}
-
-.form-success .success-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
-
-.form-success h3 {
-    color: white;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.form-success p {
-    color: var(--gray-light);
-    margin-bottom: 2rem;
+@media (max-width: 576px) {
+    .form-row {
+        grid-template-columns: 1fr; /* Поля в один столбец на мобильных */
+    }
+    .form-container-enhanced {
+        padding: 2rem 1.5rem;
+    }
+    .form-title {
+        font-size: 2rem;
+    }
 }

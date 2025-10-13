@@ -1,208 +1,163 @@
-// ===== OPTIMIZED ANIMATIONS.JS =====
+// Система анимаций при скролле
 class ScrollAnimations {
     constructor() {
+        this.elements = [];
         this.observer = null;
-        this.parallaxElements = [];
         this.init();
     }
 
     init() {
-        this.initIntersectionObserver();
-        this.initScrollEffects();
-        this.initCounters();
+        this.createObserver();
+        this.findElements();
     }
 
-    initIntersectionObserver() {
+    createObserver() {
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    this.animateElement(entry.target);
-                    this.observer.unobserve(entry.target); // Animate once
+                    this.animateIn(entry.target);
+                } else {
+                    this.animateOut(entry.target);
                 }
             });
         }, {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         });
-
-        // Observe all elements with data-aos
-        document.querySelectorAll('[data-aos]').forEach(el => {
-            this.observer.observe(el);
-        });
     }
 
-    animateElement(element) {
+    findElements() {
+        // Находим все элементы с data-aos
+        this.elements = document.querySelectorAll('[data-aos]');
+        this.elements.forEach(el => this.observer.observe(el));
+    }
+
+    animateIn(element) {
         const animation = element.getAttribute('data-aos');
         const delay = element.getAttribute('data-aos-delay') || 0;
         
-        element.style.animationDelay = `${delay}ms`;
-        element.classList.add('aos-animate', `aos-${animation}`);
-    }
-
-    initScrollEffects() {
-        // Throttled scroll handler
-        let ticking = false;
-        const updateParallax = () => {
-            this.updateParallaxElements();
-            ticking = false;
-        };
-
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(updateParallax);
-                ticking = true;
+        setTimeout(() => {
+            element.classList.add('aos-animate');
+            
+            // Специфичные анимации
+            switch(animation) {
+                case 'typewriter':
+                    this.typewriterEffect(element);
+                    break;
+                case 'flip-left':
+                case 'flip-right':
+                case 'flip-up':
+                case 'flip-down':
+                    this.flipEffect(element, animation);
+                    break;
             }
-        });
-
-        // Initialize parallax elements
-        this.parallaxElements = Array.from(document.querySelectorAll('[data-parallax]'));
+        }, parseInt(delay));
     }
 
-    updateParallaxElements() {
-        const scrolled = window.pageYOffset;
-        
-        this.parallaxElements.forEach(el => {
-            const speed = parseFloat(el.getAttribute('data-parallax-speed')) || 0.5;
-            const yPos = -(scrolled * speed);
-            el.style.transform = `translate3d(0, ${yPos}px, 0)`;
-        });
+    animateOut(element) {
+        element.classList.remove('aos-animate');
     }
 
-    initCounters() {
-        const counterElements = document.querySelectorAll('[data-counter]');
+    typewriterEffect(element) {
+        const text = element.textContent;
+        element.textContent = '';
+        element.style.width = '0';
         
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    this.animateCounter(entry.target);
-                    counterObserver.unobserve(entry.target);
+        let i = 0;
+        const timer = setInterval(() => {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(timer);
+                element.style.width = '100%';
+            }
+        }, 100);
+    }
+
+    flipEffect(element, direction) {
+        // Добавляем перспективу для 3D эффекта
+        element.style.perspective = '1000px';
+    }
+}
+
+// Инициализация при загрузке
+document.addEventListener('DOMContentLoaded', () => {
+    new ScrollAnimations();
+});
+
+// Дополнительные анимации
+const AdvancedAnimations = {
+    // Параллакс эффект
+    initParallax() {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax');
+            
+            parallaxElements.forEach(element => {
+                const speed = element.dataset.speed || 0.5;
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+    },
+
+    // Эффект наведения для карточек
+    initCardHover() {
+        document.querySelectorAll('.enhanced-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    },
+
+    // Анимация появления элементов списка
+    initStaggerAnimation() {
+        const staggerElements = document.querySelectorAll('.stagger-grid');
+        
+        staggerElements.forEach(grid => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            observer.observe(grid);
+        });
+    },
+
+    // Анимация FAQ
+    initFAQ() {
+        document.querySelectorAll('.faq-question-enhanced').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Закрываем все открытые FAQ
+                document.querySelectorAll('.faq-item-enhanced').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                // Открываем текущий, если он был закрыт
+                if (!isActive) {
+                    item.classList.add('active');
                 }
             });
-        }, { threshold: 0.5 });
-
-        counterElements.forEach(el => counterObserver.observe(el));
+        });
     }
+};
 
-    animateCounter(element) {
-        const target = parseInt(element.getAttribute('data-counter'));
-        const duration = 2000;
-        const startTime = performance.now();
-        const startValue = 0;
-
-        const updateCounter = (currentTime) => {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            
-            // Easing function
-            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-            const current = Math.floor(target * easeOutQuart);
-            
-            element.textContent = this.formatNumber(current, element);
-            
-            if (progress < 1) {
-                requestAnimationFrame(updateCounter);
-            } else {
-                element.textContent = this.formatNumber(target, element);
-            }
-        };
-
-        requestAnimationFrame(updateCounter);
-    }
-
-    formatNumber(num, element) {
-        const options = JSON.parse(element.getAttribute('data-counter-options') || '{}');
-        return options.separator ? 
-            num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, options.separator) : 
-            num.toString();
-    }
-}
-
-// TypeWriter Class
-class TypeWriter {
-    constructor(element, texts, options = {}) {
-        this.element = element;
-        this.texts = texts;
-        this.options = {
-            typeSpeed: options.typeSpeed || 100,
-            deleteSpeed: options.deleteSpeed || 50,
-            delay: options.delay || 2000,
-            loop: options.loop !== false,
-            ...options
-        };
-        
-        this.textIndex = 0;
-        this.charIndex = 0;
-        this.isDeleting = false;
-        this.timeout = null;
-        this.init();
-    }
-
-    init() {
-        this.type();
-    }
-
-    type() {
-        const currentText = this.texts[this.textIndex];
-        
-        if (this.isDeleting) {
-            this.element.textContent = currentText.substring(0, this.charIndex - 1);
-            this.charIndex--;
-        } else {
-            this.element.textContent = currentText.substring(0, this.charIndex + 1);
-            this.charIndex++;
-        }
-
-        let typeSpeed = this.isDeleting ? this.options.deleteSpeed : this.options.typeSpeed;
-
-        // Random variation for natural typing effect
-        typeSpeed += Math.random() * 50;
-
-        if (!this.isDeleting && this.charIndex === currentText.length) {
-            typeSpeed = this.options.delay;
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.charIndex === 0) {
-            this.isDeleting = false;
-            this.textIndex++;
-            if (this.textIndex >= this.texts.length) {
-                if (this.options.loop) {
-                    this.textIndex = 0;
-                } else {
-                    return;
-                }
-            }
-        }
-
-        this.timeout = setTimeout(() => this.type(), typeSpeed);
-    }
-
-    destroy() {
-        if (this.timeout) {
-            clearTimeout(this.timeout);
-        }
-    }
-}
-
-// Initialize animations
-function initAnimations() {
-    new ScrollAnimations();
-    
-    // Initialize typing animation if element exists
-    const typeElement = document.querySelector('[data-typewriter]');
-    if (typeElement) {
-        const texts = JSON.parse(typeElement.getAttribute('data-texts'));
-        const options = JSON.parse(typeElement.getAttribute('data-options') || '{}');
-        window.typeWriter = new TypeWriter(typeElement, texts, options);
-    }
-}
-
-// Export for module usage
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { ScrollAnimations, TypeWriter, initAnimations };
-}
-
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAnimations);
-} else {
-    initAnimations();
-}
+// Инициализация всех анимаций
+document.addEventListener('DOMContentLoaded', () => {
+    AdvancedAnimations.initCardHover();
+    AdvancedAnimations.initStaggerAnimation();
+    AdvancedAnimations.initFAQ();
+    AdvancedAnimations.initParallax();
+});

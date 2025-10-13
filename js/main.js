@@ -90,8 +90,8 @@ class DiaverApp {
                     </div>
                     <div class="footer-section">
                         <h4>Контакты</h4>
-                        <p>📞 8 800 123-45-67</p>
-                        <p>✉️ info@diaver.ru</p>
+                        <p> 8 800 123-45-67</p>
+                        <p> info@diaver.ru</p>
                         <a href="${basePath}contacts.html" class="btn btn-outline">Написать нам</a>
                     </div>
                 </div>

@@ -1,19 +1,19 @@
-/* ===== COMPACT GLOBAL STYLES ===== */
+/* ===== GLOBAL STYLES ===== */
 :root {
-    --primary: #f97316;
-    --primary-dark: #ea580c;
-    --secondary: #fb923c;
-    --accent: #fdba74;
+    --primary: #eb8525;
+    --primary-dark: #d8621d;
+    --secondary: #f69f3b;
+    --accent: #60a5fa;
     --danger: #ef4444;
-    --dark: #1f2937;
-    --darker: #111827;
-    --darkest: #0a0f1c;
+    --dark: #1e293b;
+    --darker: #0f172a;
+    --darkest: #020617;
     --light: #f8fafc;
-    --gray: #6b7280;
-    --gray-light: #9ca3af;
-    --gradient: linear-gradient(135deg, #f97316, #fb923c);
-    --gradient-secondary: linear-gradient(135deg, #ea580c, #f97316);
-    --gradient-accent: linear-gradient(135deg, #fb923c, #fdba74);
+    --gray: #8b7a64;
+    --gray-light: #b8b694;
+    --gradient: linear-gradient(135deg, #eb8525, #f68f3b);
+    --gradient-secondary: linear-gradient(135deg, #d8971d, #eb6425);
+    --gradient-accent: linear-gradient(135deg, #f68f3b, #fabc60);
 }
 
 * {
@@ -42,7 +42,7 @@ body {
     padding: 0 15px;
 }
 
-/* ===== COMPACT TYPOGRAPHY ===== */
+/* ===== TYPOGRAPHY ===== */
 .gradient-text {
     background: var(--gradient);
     -webkit-background-clip: text;
@@ -54,7 +54,7 @@ body {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     text-align: center;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #fff, #fdba74);
+    background: linear-gradient(135deg, #fff, var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -71,7 +71,7 @@ body {
     font-weight: 600;
 }
 
-/* ===== COMPACT BUTTONS ===== */
+/* ===== BUTTONS ===== */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -110,7 +110,7 @@ body {
 
 .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+    box-shadow: 0 8px 20px rgba(235, 182, 37, 0.3);
 }
 
 .btn-outline {
@@ -125,7 +125,17 @@ body {
     transform: translateY(-1px);
 }
 
-/* ===== COMPACT UTILITY CLASSES ===== */
+.btn-large {
+    padding: 12px 30px;
+    font-size: 1rem;
+}
+
+.btn-small {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+}
+
+/* ===== UTILITY CLASSES ===== */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
@@ -137,7 +147,7 @@ body {
 .mt-2 { margin-top: 1.5rem; }
 .mt-3 { margin-top: 2rem; }
 
-/* ===== COMPACT LOADING ===== */
+/* ===== LOADING ===== */
 .loading {
     display: inline-block;
     width: 16px;
@@ -152,7 +162,7 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* ===== PARTICLES BACKGROUND ===== */
+/* ===== PARTICLE BACKGROUND ===== */
 .particles-bg {
     position: fixed;
     top: 0;
@@ -169,53 +179,7 @@ body {
     z-index: 1;
 }
 
-.hero-tech,
-.page-hero,
-.solutions-intro,
-.ready-solutions,
-.projects-section,
-.stats-section,
-.cta-section,
-.about-section,
-.values-section,
-.team-section,
-.contact-info-section,
-.contact-form-section,
-.faq-section,
-.cases-section,
-.testimonials-section {
-    background: transparent;
-}
-
-.solutions-intro,
-.stats-section,
-.faq-section,
-.testimonials-section {
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.solution-card,
-.project-card,
-.product-card,
-.case-card,
-.contact-card,
-.value-card,
-.team-member,
-.testimonial-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-}
-
-/* Быстрое исправление для всех внутренних страниц */
-body:not(:has(.hero-tech)) main {
-    padding-top: 10px;
-}
-
-body:not(:has(.hero-tech)) .page-hero {
-    padding-top: 100px;
-}
-
-/* ===== COMPACT RESPONSIVE ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .container {
         padding: 0 12px;

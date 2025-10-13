@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/components/features.css">
     <link rel="stylesheet" href="../css/components/footer.css">
     <link rel="stylesheet" href="../css/pages/contacts.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ac972b4d-7f89-4208-b8fa-95faa437acb4&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
     <div class="particles-bg" id="particles-js"></div>
@@ -19,7 +20,6 @@
     <header class="header" id="header"></header>
 
     <main>
-        <!-- Enhanced Hero -->
         <section class="page-hero-contacts">
             <div class="container">
                 <div class="hero-content-contacts">
@@ -38,7 +38,6 @@
             </div>
         </section>
 
-        <!-- Contact Info Enhanced -->
         <section class="contact-info-enhanced">
             <div class="container">
                 <div class="contact-grid-enhanced">
@@ -121,11 +120,9 @@
             </div>
         </section>
 
-        <!-- Contact Form & Map Enhanced -->
         <section class="contact-form-enhanced">
             <div class="container">
                 <div class="contact-layout-enhanced">
-                    <!-- Enhanced Form -->
                     <div class="form-container-enhanced" data-aos="fade-right">
                         <div class="form-header">
                             <h2>Напишите нам</h2>
@@ -188,34 +185,9 @@
                         </form>
                     </div>
 
-                    <!-- Enhanced Map & Info -->
                     <div class="map-info-container" data-aos="fade-left">
-                        <div class="map-placeholder-enhanced">
-                            <div class="map-content-enhanced">
-                                <div class="map-icon">🗺️</div>
-                                <h3>Наш офис в Москве</h3>
-                                <p>Бизнес-центр "ТехноПарк"</p>
-                                <p>Станция метро: "Технопарк"</p>
-                                <div class="map-features-enhanced">
-                                    <div class="feature-item">
-                                        <div class="feature-icon">🚇</div>
-                                        <span>5 минут от метро</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <div class="feature-icon">🅿️</div>
-                                        <span>Бесплатная парковка</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <div class="feature-icon">♿</div>
-                                        <span>Доступная среда</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <div class="feature-icon">☕</div>
-                                        <span>Комфортная зона ожидания</span>
-                                    </div>
-                                </div>
+                        <div id="yandex-map" class="map-placeholder-enhanced">
                             </div>
-                        </div>
                         
                         <div class="additional-info-enhanced">
                             <h3>Реквизиты компании</h3>
@@ -272,7 +244,6 @@
             </div>
         </section>
 
-        <!-- FAQ Enhanced -->
         <section class="faq-enhanced">
             <div class="container">
                 <div class="section-header-enhanced" data-aos="fade-up">
@@ -323,7 +294,6 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
         <section class="cta-contacts">
             <div class="container">
                 <div class="cta-content-contacts" data-aos="fade-up">
@@ -355,6 +325,7 @@
     <script src="../js/particles.js"></script>
     <script src="../js/animations.js"></script>
     <script src="../js/form-validator.js"></script>
+    <script src="../js/yandex-map.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>
