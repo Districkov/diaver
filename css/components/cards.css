@@ -186,19 +186,20 @@
     font-weight: 500;
 }
 
-/* Logos Slider */
+/* Logos Slider - Обновленная версия с бесконечной прокруткой */
 .logos-slider {
     position: relative;
     width: 100%;
     overflow: hidden;
-    mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+    mask: linear-gradient(90deg, transparent, white 15%, white 85%, transparent);
 }
 
 .slider-track {
     display: flex;
-    animation: slide 30s linear infinite;
+    animation: slide 40s linear infinite;
     gap: 4rem;
     padding: 2rem 0;
+    width: max-content;
 }
 
 /* Logo Slides */
@@ -230,7 +231,7 @@
 
 /* Tooltip */
 .logo-slide::before {
-    
+    content: attr(data-tooltip);
     position: absolute;
     bottom: 100%;
     left: 50%;
@@ -255,7 +256,6 @@
     bottom: calc(100% + 10px);
 }
 
-/* Hover Effects */
 
 .logo-slide:hover img {
     filter: grayscale(0%) brightness(1);
@@ -263,21 +263,30 @@
     transform: scale(1.1);
 }
 
-/* Slider Animation */
+/* Slider Animation - Бесконечная анимация */
 @keyframes slide {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-180px * 7 - 4rem * 7));
+        transform: translateX(calc(-180px * 14 - 4rem * 14)); /* Удваиваем для дублированных слайдов */
     }
 }
 
 /* Responsive Cards */
+@media (max-width: 1200px) {
+    .process-steps {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        padding: 0 2rem;
+    }
+}
+
 @media (max-width: 968px) {
     .process-steps {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        max-width: 500px;
     }
     
     .step-line {
@@ -307,8 +316,12 @@
     
     @keyframes slide {
         100% {
-            transform: translateX(calc(-140px * 7 - 3rem * 7));
+            transform: translateX(calc(-140px * 14 - 3rem * 14));
         }
+    }
+    
+    .logos-slider {
+        mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
     }
 }
 
@@ -320,6 +333,10 @@
     
     .cta-content-advanced h2 {
         font-size: 2rem;
+    }
+    
+    .cta-description {
+        font-size: 1.1rem;
     }
     
     .logo-slide {
@@ -334,12 +351,32 @@
     
     @keyframes slide {
         100% {
-            transform: translateX(calc(-120px * 7 - 2.5rem * 7));
+            transform: translateX(calc(-120px * 14 - 2.5rem * 14));
         }
+    }
+    
+    .logos-slider {
+        mask: linear-gradient(90deg, transparent, white 8%, white 92%, transparent);
     }
 }
 
 @media (max-width: 640px) {
+    .process-step {
+        padding: 1.5rem;
+    }
+    
+    .step-number {
+        font-size: 2.5rem;
+    }
+    
+    .cta-content-advanced {
+        padding: 0 1rem;
+    }
+    
+    .cta-content-advanced h2 {
+        font-size: 1.8rem;
+    }
+    
     .logo-slide {
         width: 100px;
         height: 50px;
@@ -352,12 +389,29 @@
     
     @keyframes slide {
         100% {
-            transform: translateX(calc(-100px * 7 - 2rem * 7));
+            transform: translateX(calc(-100px * 14 - 2rem * 14));
         }
+    }
+    
+    .logos-slider {
+        mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
     }
 }
 
 @media (max-width: 480px) {
+    .process-section,
+    .cta-showcase {
+        padding: 3rem 0;
+    }
+    
+    .cta-content-advanced h2 {
+        font-size: 1.6rem;
+    }
+    
+    .cta-description {
+        font-size: 1rem;
+    }
+    
     .logo-slide {
         width: 90px;
         height: 45px;
@@ -370,7 +424,7 @@
     
     @keyframes slide {
         100% {
-            transform: translateX(calc(-90px * 7 - 1.5rem * 7));
+            transform: translateX(calc(-90px * 14 - 1.5rem * 14));
         }
     }
     
@@ -380,9 +434,32 @@
     
     .trusted-label {
         margin-bottom: 2rem;
+        font-size: 0.8rem;
     }
     
     .logos-slider {
-        mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+        mask: linear-gradient(90deg, transparent, white 3%, white 97%, transparent);
+    }
+}
+
+/* Анимация для уменьшенной скорости на мобильных устройствах */
+@media (max-width: 768px) {
+    .slider-track {
+        animation-duration: 50s; /* Медленнее на мобильных */
+    }
+}
+
+/* Поддержка prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .slider-track {
+        animation: none;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .logos-slider {
+        mask: none;
+        overflow: visible;
     }
 }
