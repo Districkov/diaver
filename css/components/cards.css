@@ -256,12 +256,6 @@
 }
 
 /* Hover Effects */
-.logo-slide:hover {
-    background: rgba(255, 107, 53, 0.08);
-    border: 1px solid var(--border-orange);
-    box-shadow: var(--shadow-orange);
-    transform: translateY(-2px);
-}
 
 .logo-slide:hover img {
     filter: grayscale(0%) brightness(1);
