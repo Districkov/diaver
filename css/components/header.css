@@ -124,10 +124,6 @@
     gap: 0.5rem;
 }
 
-.nav-phone::before {
-    content: "📞";
-}
-
 .nav-phone:hover {
     background: rgba(99, 102, 241, 0.2);
     transform: translateY(-2px);
