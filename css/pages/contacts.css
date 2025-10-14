@@ -398,12 +398,79 @@
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    min-height: 400px;
 }
 
 #yandex-map {
     width: 100%;
     height: 100%;
     border-radius: 15px;
+    position: relative;
+}
+
+/* Индикатор загрузки карты */
+.map-placeholder-enhanced:not(.loaded)::before {
+    content: 'Загрузка карты...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--gray);
+    z-index: 1;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.map-placeholder-enhanced:not(.loaded)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 41, 59, 0.8);
+    border-radius: 15px;
+    z-index: 0;
+}
+
+.map-placeholder-enhanced.loaded::before,
+.map-placeholder-enhanced.loaded::after {
+    display: none;
+}
+
+/* Стили для элементов Яндекс.Карт */
+.ymaps-2-1-79-map {
+    border-radius: 15px !important;
+}
+
+.ymaps-2-1-79-inner-panes {
+    border-radius: 15px !important;
+}
+
+.ymaps-2-1-79-balloon {
+    border-radius: 12px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+.ymaps-2-1-79-balloon__content {
+    border-radius: 12px !important;
+    background: var(--darkest) !important;
+    color: var(--light) !important;
+}
+
+.ymaps-2-1-79-balloon__content h3 {
+    color: var(--light) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.ymaps-2-1-79-balloon__content strong {
+    color: var(--primary) !important;
+}
+
+.ymaps-2-1-79-balloon__close-button {
+    background: var(--primary) !important;
+    border-radius: 50% !important;
 }
 
 .additional-info-enhanced {
@@ -704,6 +771,11 @@
         max-width: 300px;
         justify-content: center;
     }
+    
+    .map-placeholder-enhanced {
+        height: 300px;
+        min-height: 300px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -746,34 +818,9 @@
     .cta-content-contacts p {
         font-size: 1.1rem;
     }
-}
-/* Дополнительные стили для карты */
-#yandex-map {
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-}
-
-.map-placeholder-enhanced {
-    height: 400px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-}
-
-/* Индикатор загрузки карты */
-.map-placeholder-enhanced::before {
-    content: 'Загрузка карты...';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--gray);
-    z-index: 1;
-}
-
-.map-placeholder-enhanced.loaded::before {
-    display: none;
+    
+    .map-placeholder-enhanced {
+        height: 250px;
+        min-height: 250px;
+    }
 }
