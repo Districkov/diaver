@@ -25,7 +25,7 @@ function initYandexMap() {
         console.log('✅ Yandex Maps API готово к использованию');
         
         try {
-            const mapCenter = [55.7558, 37.6173];
+            const mapCenter = [55.731455, 37.669367];
             console.log('📍 Центр карты:', mapCenter);
             
             // Создаем карту
@@ -43,8 +43,7 @@ function initYandexMap() {
                 balloonContentHeader: '<div style="font-size: 16px; font-weight: bold; color: #2563eb;">ООО "ДИАВЕР"</div>',
                 balloonContentBody: `
                     <div style="color: #e2e8f0;">
-                        <strong>Адрес:</strong> Москва, ул. Примерная, д. 123<br>
-                        <strong>Бизнес-центр "ТехноПарк"</strong><br><br>
+                        <strong>Адрес:</strong> Москва, ул. Волгоградский проспект, д. 2<br>
                         <strong>Телефон:</strong> +7 (495) 123-45-67<br>
                         <strong>Email:</strong> info@diaver.ru
                     </div>
