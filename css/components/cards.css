@@ -186,20 +186,24 @@
     font-weight: 500;
 }
 
-/* Logos Slider - Обновленная версия с бесконечной прокруткой */
+/* Logos Slider - Бесконечная непрерывная версия */
 .logos-slider {
     position: relative;
     width: 100%;
     overflow: hidden;
-    mask: linear-gradient(90deg, transparent, white 15%, white 85%, transparent);
+    mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+}
+
+.slider-container {
+    display: flex;
+    width: fit-content;
 }
 
 .slider-track {
     display: flex;
-    animation: slide 40s linear infinite;
+    animation: slide 45s linear infinite; /* Увеличена скорость до 45 секунд */
     gap: 4rem;
     padding: 2rem 0;
-    width: max-content;
 }
 
 /* Logo Slides */
@@ -255,7 +259,7 @@
     visibility: visible;
     bottom: calc(100% + 10px);
 }
-
+ 
 
 .logo-slide:hover img {
     filter: grayscale(0%) brightness(1);
@@ -263,13 +267,13 @@
     transform: scale(1.1);
 }
 
-/* Slider Animation - Бесконечная анимация */
+/* Бесконечная анимация - плавная и непрерывная */
 @keyframes slide {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-180px * 14 - 4rem * 14)); /* Удваиваем для дублированных слайдов */
+        transform: translateX(calc(-180px * 7 - 4rem * 7)); /* Сдвигаем на ширину одного набора */
     }
 }
 
@@ -312,16 +316,17 @@
     
     .slider-track {
         gap: 3rem;
+        animation-duration: 35s; /* Ускорение для планшетов */
     }
     
     @keyframes slide {
         100% {
-            transform: translateX(calc(-140px * 14 - 3rem * 14));
+            transform: translateX(calc(-140px * 7 - 3rem * 7));
         }
     }
     
     .logos-slider {
-        mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+        mask: linear-gradient(90deg, transparent, white 8%, white 92%, transparent);
     }
 }
 
@@ -347,16 +352,17 @@
     
     .slider-track {
         gap: 2.5rem;
+        animation-duration: 30s; /* Ускорение для мобильных */
     }
     
     @keyframes slide {
         100% {
-            transform: translateX(calc(-120px * 14 - 2.5rem * 14));
+            transform: translateX(calc(-120px * 7 - 2.5rem * 7));
         }
     }
     
     .logos-slider {
-        mask: linear-gradient(90deg, transparent, white 8%, white 92%, transparent);
+        mask: linear-gradient(90deg, transparent, white 6%, white 94%, transparent);
     }
 }
 
@@ -385,16 +391,17 @@
     
     .slider-track {
         gap: 2rem;
+        animation-duration: 25s; /* Еще больше ускорение для маленьких экранов */
     }
     
     @keyframes slide {
         100% {
-            transform: translateX(calc(-100px * 14 - 2rem * 14));
+            transform: translateX(calc(-100px * 7 - 2rem * 7));
         }
     }
     
     .logos-slider {
-        mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+        mask: linear-gradient(90deg, transparent, white 4%, white 96%, transparent);
     }
 }
 
@@ -420,11 +427,12 @@
     
     .slider-track {
         gap: 1.5rem;
+        animation-duration: 20s; /* Максимальное ускорение для очень маленьких экранов */
     }
     
     @keyframes slide {
         100% {
-            transform: translateX(calc(-90px * 14 - 1.5rem * 14));
+            transform: translateX(calc(-90px * 7 - 1.5rem * 7));
         }
     }
     
@@ -438,14 +446,7 @@
     }
     
     .logos-slider {
-        mask: linear-gradient(90deg, transparent, white 3%, white 97%, transparent);
-    }
-}
-
-/* Анимация для уменьшенной скорости на мобильных устройствах */
-@media (max-width: 768px) {
-    .slider-track {
-        animation-duration: 50s; /* Медленнее на мобильных */
+        mask: linear-gradient(90deg, transparent, white 2%, white 98%, transparent);
     }
 }
 
@@ -455,11 +456,15 @@
         animation: none;
         justify-content: center;
         flex-wrap: wrap;
-        width: 100%;
     }
     
     .logos-slider {
         mask: none;
         overflow: visible;
+    }
+    
+    .slider-container {
+        width: 100%;
+        justify-content: center;
     }
 }
