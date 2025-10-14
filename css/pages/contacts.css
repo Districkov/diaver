@@ -442,6 +442,8 @@
 /* Стили для элементов Яндекс.Карт */
 .ymaps-2-1-79-map {
     border-radius: 15px !important;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .ymaps-2-1-79-inner-panes {
@@ -524,7 +526,8 @@
     font-size: 1rem;
 }
 
-.social-contacts {
+/* Стили для контактной информации */
+.contact-details-enhanced {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 15px;
@@ -532,36 +535,141 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.social-contacts h4 {
+.contact-details-enhanced h4 {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     color: var(--light);
     text-align: center;
 }
 
-.social-links-enhanced {
+.contact-links-enhanced {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
-.social-link-enhanced {
+.contact-item-enhanced {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 10px;
-    color: var(--light);
-    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
 }
 
-.social-link-enhanced:hover {
+.contact-item-enhanced:hover {
     background: rgba(37, 99, 235, 0.1);
-    border-color: rgba(37, 99, 235, 0.3);
+    border-color: rgba(37, 99, 235, 0.2);
     transform: translateX(5px);
+}
+
+.contact-icon-wrapper-small {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 50%;
+    border: 1px solid rgba(37, 99, 235, 0.3);
+}
+
+.contact-icon-small {
+    font-size: 1.2rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+}
+
+.contact-link {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--primary);
+}
+
+.contact-description {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+/* Стили для времени работы */
+.work-schedule {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.work-schedule h5 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--light);
+    text-align: center;
+}
+
+.schedule-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-days {
+    color: var(--light);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.schedule-time {
+    color: var(--gray);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.support-note-small {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(37, 99, 235, 0.1);
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+}
+
+.support-note-small .note-icon {
+    font-size: 1rem;
+}
+
+.support-note-small span {
+    color: var(--light);
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
 /* FAQ Section */
@@ -776,6 +884,27 @@
         height: 300px;
         min-height: 300px;
     }
+    
+    .contact-item-enhanced {
+        padding: 0.8rem;
+    }
+    
+    .contact-icon-wrapper-small {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .contact-icon-small {
+        font-size: 1rem;
+    }
+    
+    .contact-link {
+        font-size: 0.95rem;
+    }
+    
+    .work-schedule {
+        padding: 1.2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -796,7 +925,7 @@
     }
     
     .additional-info-enhanced,
-    .social-contacts {
+    .contact-details-enhanced {
         padding: 1.5rem;
     }
     
@@ -822,5 +951,26 @@
     .map-placeholder-enhanced {
         height: 250px;
         min-height: 250px;
+    }
+    
+    .contact-item-enhanced {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    
+    .contact-icon-wrapper-small {
+        align-self: center;
+    }
+    
+    .schedule-item {
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: center;
+    }
+    
+    .schedule-days,
+    .schedule-time {
+        text-align: center;
     }
 }
